@@ -1,0 +1,21 @@
+Skybox
+	texture = skybox.xpm
+
+Polygon				//Mur Fond
+{
+   	dot = x:250, y:-100, z:100, X:0, Y:0
+    dot = x:250, y:50, z:100, X:1, Y:0
+    dot = x:250, y:-100, z:-100, X:0, Y:1
+    texture = t3.xpm
+}
+
+Object
+{
+    pos = x:20, y:20, z:0
+    rot = x:90, y:5, z:6
+	scale = 5.2
+    file = creeper.obj
+	type = armor
+}
+
+
