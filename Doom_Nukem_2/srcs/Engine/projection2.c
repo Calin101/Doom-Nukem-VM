@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 18:08:24 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 18:12:05 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 14:15:23 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,12 @@ int		in_poly(t_poly *poly, t_fdot col)
 	ap = getvect(poly->dot[0], col);
 	bp = getvect(poly->dot[1], col);
 	bp = getvect(poly->dot[2], col);
-	if ((scale(vectoriel_product(poly->vAB, ap),
-	vectoriel_product(ap, poly->vAC)) >= 0)
-	&& (scale(vectoriel_product(poly->vBA, bp),
-	vectoriel_product(bp, poly->vBC)) >= 0)
-	&& (scale(vectoriel_product(poly->vCA, cp),
-	vectoriel_product(cp, poly->vCB))) >= 0)
+	if ((scale(vectoriel_product(poly->vab, ap),
+	vectoriel_product(ap, poly->vac)) >= 0)
+	&& (scale(vectoriel_product(poly->vba, bp),
+	vectoriel_product(bp, poly->vbc)) >= 0)
+	&& (scale(vectoriel_product(poly->vca, cp),
+	vectoriel_product(cp, poly->vcb))) >= 0)
 		return (0xFF);
 	return (0);
 }

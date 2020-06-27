@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:26:26 by calin             #+#    #+#             */
-/*   Updated: 2020/06/26 15:11:46 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 15:16:21 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ void	print_inventory(t_data *data)
 		data->pos_texture[10].y);
 		ft_strdel(&tmp);
 	}
+	print_inventory2(data);
 }

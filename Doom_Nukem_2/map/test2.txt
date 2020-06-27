@@ -85,9 +85,9 @@ Object
 {
     pos = x:20, y:20, z:0
     rot = x:90, y:5, z:6
-	scale = 0.2
-    file = creeper.obj
-	type = enemi
+	scale = 2.2
+    file = chest.obj
+	type = armor
 }
 
 

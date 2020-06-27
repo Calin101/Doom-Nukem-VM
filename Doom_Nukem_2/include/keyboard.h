@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   keyboard.h                                       .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: calin <calin@student.le-101.fr>            +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/05/21 17:41:17 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/24 18:26:56 by calin       ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keyboard.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 17:41:17 by mwaterso          #+#    #+#             */
+/*   Updated: 2020/06/27 14:12:52 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KEYBOARD_H
@@ -78,7 +77,7 @@
 # define KEY_COLON          41
 # define KEY_SEMI_COLON     41
 # define KEY_SIMPLE_QUOTE   39
-# define KEY_float_QUOTES  39
+# define KEY_FLOAT_QUOTES  	39
 # define KEY_ENTER          36
 # define KEY_SHIFT_LEFT     257
 # define KEY_Z              6

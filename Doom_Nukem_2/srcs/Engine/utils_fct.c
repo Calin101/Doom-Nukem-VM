@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 16:13:17 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 16:14:03 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 14:16:10 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ t_ray	*tab_ray(int nbrpix, t_input *data)
 
 void	initialize_vec_poly(t_poly *poly)
 {
-	poly->vAB = getvect(poly->dot[0], poly->dot[1]);
-	poly->vBC = getvect(poly->dot[1], poly->dot[2]);
-	poly->vAC = getvect(poly->dot[0], poly->dot[2]);
-	poly->vBA = getvect(poly->dot[1], poly->dot[0]);
-	poly->vCB = getvect(poly->dot[2], poly->dot[1]);
-	poly->vCA = getvect(poly->dot[2], poly->dot[0]);
-	poly->scaleAB = scale(poly->vAB, poly->vAB);
-	poly->scaleAC = scale(poly->vAC, poly->vAC);
-	poly->scaleABAC = scale(poly->vAB, poly->vAC);
+	poly->vab = getvect(poly->dot[0], poly->dot[1]);
+	poly->vbc = getvect(poly->dot[1], poly->dot[2]);
+	poly->vac = getvect(poly->dot[0], poly->dot[2]);
+	poly->vba = getvect(poly->dot[1], poly->dot[0]);
+	poly->vcb = getvect(poly->dot[2], poly->dot[1]);
+	poly->vca = getvect(poly->dot[2], poly->dot[0]);
+	poly->scaleab = scale(poly->vab, poly->vab);
+	poly->scaleac = scale(poly->vac, poly->vac);
+	poly->scaleabac = scale(poly->vab, poly->vac);
 }
 
 int		cp_dots(t_poly *poly)

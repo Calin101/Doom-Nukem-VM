@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:33:24 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 15:38:22 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 18:14:42 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		mouse_press(int button, int x, int y, void *param)
 		mlx_mouse_hide(data->mlx_addrs, data->win_addrs);
 	}
 	if (data->menu_state == 1 && (x > 625 && x < 915 && y > 576 && y < 671))
-		printf("Exec editor\n");
+		ft_putendl("Usage: cd Editor/ && ./doom_editor");
 	if ((data->menu_state == 1 || data->dead_state == 1)
 	&& (x > 625 && x < 915 && y > 727 && y < 822))
 		close_game(data);

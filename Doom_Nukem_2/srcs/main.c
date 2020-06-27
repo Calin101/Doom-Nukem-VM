@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:17:42 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/26 17:01:35 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 15:19:06 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	init_var2(t_data *data)
 	data->shieldanim.index_shield_anim = -1;
 	data->weaponanim.index_wpn_anim = -1;
 	data->weaponanim.index_rld_anim = -1;
+	data->inventory.slot_three = 0;
 	data->menu_state = 1;
 	data->dead_state = 0;
 	data->first_frame = 0;

@@ -77,9 +77,9 @@ FLAGS = -Llibft -lft -Lminilibx_macos -lX11 -lXext -lbsd -lm -lmlx -lpthread
 
 OBJ = $(SRC_NAME:%.c=%.o)
 
-all : $(NAME)
+all : $(LIBFT) $(LIBMLX) make_editor $(NAME)
 
-$(NAME): $(LIBFT) $(LIBMLX) $(OBJ)
+$(NAME): $(OBJ)
 	clang $(FLAGS_MATH) -I include/ -o $(NAME) $(OBJ) $(FLAGS)
 
 %.o: %.c $(INC)
@@ -91,6 +91,9 @@ $(LIBFT):
 $(LIBMLX):
 	make -C minilibx_macos/ 
 
+make_editor:
+	cd Editor/ && make
+
 clean: 
 	make clean -C libft/
 	make clean -C minilibx_macos/
@@ -98,6 +101,7 @@ clean:
 
 fclean: clean
 	make fclean -C libft/
+	make fclean -C Editor/
 	rm -rf $(NAME)
 
 re: fclean all

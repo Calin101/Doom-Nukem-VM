@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   libft.h                                          .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/04 12:21:37 by beduroul     #+#   ##    ##    #+#       */
-/*   Updated: 2020/03/05 16:55:36 by mwaterso    ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/04 12:21:37 by beduroul          #+#    #+#             */
+/*   Updated: 2020/06/27 13:54:21 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
@@ -59,7 +58,8 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
-char				*ft_strjoin2(char const *s1, char const *s2, int index_free);
+char				*ft_strjoin2(char const *s1, char const *s2,
+					int index_free);
 char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 char				*ft_strmap(char const *s, char (*f)(char));
@@ -74,22 +74,21 @@ char				*ft_strrev(char *str);
 int					ft_strcchr(char *str, char c);
 int					ft_avlen(char **av);
 void				ft_avswap(char **a, char **b);
-void    			ft_2dstrdel(char ***as);
+void				ft_2dstrdel(char ***as);
 int					ft_strnequ_word(char const *s1, char const *s2, size_t n);
-int     			ft_strnchr(char *str, char c);
+int					ft_strnchr(char *str, char c);
 
 /*
 ** Print
 */
 
-typedef enum        s_putstr_style
+typedef enum		s_putstr_style
 {
-	NONE =			0,
-    BOLD =			1,
-    UNDERLINE = 	2,
-    ITALIC =		4
-}                   t_putstr_style;
-
+	NONE = 0,
+	BOLD = 1,
+	UNDERLINE = 2,
+	ITALIC = 4
+}					t_putstr_style;
 
 void				ft_putchar(char c);
 size_t				ft_putstr(const char *s);
@@ -102,9 +101,12 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putspace(int n);
 void				ft_putendl_color(const char *s, const char *color);
 void				ft_putstr_color(const char *s, const char *color);
-void       			ft_putstr_hexa(char *str, t_putstr_style type, u_int32_t color);
-void       			ft_putendl_hexa(char *str, t_putstr_style type, u_int32_t color);
-void       			ft_putnbr_hexa(int nbr, t_putstr_style type, u_int32_t color);
+void				ft_putstr_hexa(char *str, t_putstr_style type,
+					u_int32_t color);
+void				ft_putendl_hexa(char *str, t_putstr_style type,
+					u_int32_t color);
+void				ft_putnbr_hexa(int nbr, t_putstr_style type,
+					u_int32_t color);
 
 /*
 ** Maths
@@ -153,8 +155,8 @@ int					ft_tolower(int c);
 void				ft_foreach(int *tab, int length, void (*f)(int));
 char				*color_txt(char *str, char *name, char *color);
 void				rspace(int nb, char *str);
-int     			ft_tablen(void **tab);
+int					ft_tablen(void **tab);
 int					ft_ispace(int c);
-float          		ft_atof(const char *str);
+float				ft_atof(const char *str);
 
 #endif

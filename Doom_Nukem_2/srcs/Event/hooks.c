@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:39:51 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/26 15:46:24 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 14:14:27 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ int		checkbaryntex(t_poly *poly, t_fdot *colli)
 	alpha = 0.0;
 	ap = getvect(poly->dot[0], *colli);
 	if (!(checkzero(poly->den1, 0.0001)))
-		alpha = (poly->vBC.y * ap.z - poly->vBC.z * ap.y) / poly->den1;
+		alpha = (poly->vbc.y * ap.z - poly->vbc.z * ap.y) / poly->den1;
 	else if (!(checkzero(poly->den2, 0.0001)))
-		alpha = (poly->vBC.x * ap.y - poly->vBC.y * ap.x) / poly->den2;
+		alpha = (poly->vbc.x * ap.y - poly->vbc.y * ap.x) / poly->den2;
 	else if (!(checkzero(poly->den3, 0.0001)))
-		alpha = (poly->vBC.z * ap.x - poly->vBC.x * ap.z) / poly->den3;
-	if (!checkzero(poly->vBC.y, 0.0001))
-		beta = (poly->vAB.y * alpha - ap.y) / -poly->vBC.y;
-	else if (!checkzero(poly->vBC.z, 0.0001))
-		beta = (poly->vAB.z * alpha - ap.z) / -poly->vBC.z;
+		alpha = (poly->vbc.z * ap.x - poly->vbc.x * ap.z) / poly->den3;
+	if (!checkzero(poly->vbc.y, 0.0001))
+		beta = (poly->vab.y * alpha - ap.y) / -poly->vbc.y;
+	else if (!checkzero(poly->vbc.z, 0.0001))
+		beta = (poly->vab.z * alpha - ap.z) / -poly->vbc.z;
 	else
-		beta = (poly->vAB.x * alpha - ap.x) / -poly->vBC.x;
+		beta = (poly->vab.x * alpha - ap.x) / -poly->vbc.x;
 	if (alpha < 0 || beta < 0 || alpha > 1 || beta > 1 || alpha < beta)
 		return (-1);
 	return (1);

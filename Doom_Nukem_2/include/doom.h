@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 15:38:23 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/26 18:51:53 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 17:57:36 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # include <sys/time.h>
 # define NB_THREAD		4
 # define NB_TEXTURE		4
-# define NB_HUD_TEX		15
+# define NB_HUD_TEX		16
 # define NB_ANIM_TEX	4
 # define WIN_SIZE_W		1600
 # define WIN_SIZE_H		900
@@ -183,7 +183,7 @@ typedef	struct			s_lst_mtl
 {
 	char				*name;
 	t_mtl				mtl;
-	struct s_lst_mtl	next;
+	struct s_lst_mtl	*next;
 }						t_lst_mtl;
 
 typedef struct			s_poly
@@ -200,15 +200,15 @@ typedef struct			s_poly
 	float				b;
 	float				c;
 	float				d;
-	t_fdot				vAB;
-	t_fdot				vBC;
-	t_fdot				vAC;
-	t_fdot				vBA;
-	t_fdot				vCB;
-	t_fdot				vCA;
-	float				scaleAB;
-	float				scaleAC;
-	float				scaleABAC;
+	t_fdot				vab;
+	t_fdot				vbc;
+	t_fdot				vac;
+	t_fdot				vba;
+	t_fdot				vcb;
+	t_fdot				vca;
+	float				scaleab;
+	float				scaleac;
+	float				scaleabac;
 	float				den1;
 	float				den2;
 	float				den3;
@@ -218,8 +218,8 @@ typedef struct			s_poly
 	float				areaabc;
 	int					nbr_p;
 	int					nbr_pprojx;
-	int 				debug;
-	char*				tex;
+	int					debug;
+	char				*tex;
 	t_tex				tex_tab;
 	t_mtl				mtl;
 	t_image				texture;
@@ -232,7 +232,7 @@ typedef struct			s_sphere
 	float				r;
 	float				rp2;
 	t_tex				tex;
-	t_fdot				veci;  
+	t_fdot				veci;
 	t_fdot				vecj;
 	t_fdot				i;
 	t_fdot				j;
@@ -334,7 +334,7 @@ typedef struct			s_data
 }						t_data;
 
 typedef struct			s_input
-{   
+{
 	void				*mlx_ad;
 	void				*win_ad;
 	t_image				im;
@@ -347,7 +347,7 @@ typedef struct			s_input
 	float				alpha_z;
 	float				angley;
 	int					nbrpoly;
-	int 				debug;
+	int					debug;
 	int					nbrtour;
 	t_poly				*map;
 	t_object			*obj;
@@ -358,16 +358,16 @@ typedef struct			s_input
 	t_3x3matrix			rotz;
 	t_3x3matrix			roty;
 	t_3x3matrix			minrotz;
-	t_3x3matrix 		minroty;
+	t_3x3matrix			minroty;
 	t_data				*data_hud;
 	int					fps;
-	int 				screensize;
-	float 				cons1;
-	float 				cons2;
+	int					screensize;
+	float				cons1;
+	float				cons2;
 	t_object			end;
 }						t_input;
 
-typedef struct 			s_lstex
+typedef struct			s_lstex
 {
 	t_tex				tex;
 	char				*name;
@@ -384,14 +384,13 @@ typedef	struct			s_alkashi
 	float				cp;
 }						t_alkashi;
 
-
 typedef struct			s_file_obj
 {
 	t_fdot				pos;
 	t_lst_mtl			*lst;
-	t_fdot      		*v;
-	t_2d        		*vt;
-	t_fdot      		*vn;
+	t_fdot				*v;
+	t_2d				*vt;
+	t_fdot				*vn;
 	t_index				size;
 	t_index				index;
 	int					tex;
@@ -412,82 +411,88 @@ void					check_mouse(t_input *input);
 void					check_hooks(t_input *input);
 void					print_inventory(t_data *data);
 void					free_texlst(t_lstex **tex, t_input *data);
-int						init_lsttex(t_poly *poly, t_lstex **lst, t_input *data);
-t_fdot 					roty(t_fdot in, float degree);
-t_fdot 					rotx(t_fdot in, float degree);
-t_fdot 					rotz(t_fdot in, float degree);
-int 					checkbaryntex(t_poly *poly, t_fdot *colli);
+int						init_lsttex(t_poly *poly, t_lstex **lst,
+						t_input *data);
+t_fdot					roty(t_fdot in, float degree);
+t_fdot					rotx(t_fdot in, float degree);
+t_fdot					rotz(t_fdot in, float degree);
+int						checkbaryntex(t_poly *poly, t_fdot *colli);
 void					check_obj(t_object *object, t_input *data);
 int						check_gravity(t_poly *poly);
-int 					getcollishot(t_input *data, t_poly *poly, t_fdot *colli, int r);
+int						getcollishot(t_input *data, t_poly *poly,
+						t_fdot *colli, int r);
+void					print_inventory2(t_data *data);
 void					rotate_obj(t_object *new);
 int						sort_skybox(t_input *data, char *file);
-int 					mouse_moove(int x, int y, void *param);
+int						mouse_moove(int x, int y, void *param);
 void					dead_anim(t_data *data);
-t_fdot 					normalise_vec(t_fdot a);
+t_fdot					normalise_vec(t_fdot a);
 void					getobjplans(t_input *data);
 void					redefineobj(t_input *data);
 void					separate_points(t_poly *map);
-void					mapmoveallp(t_input  *data, t_fdot way);
+void					mapmoveallp(t_input *data, t_fdot way);
 int						projxy(t_poly *map, t_input *data);
 void					get_objpo(t_object *objects, t_input *data);
-int 					process_ray(t_proray ray, t_input *data, t_poly *poly);
+int						process_ray(t_proray ray, t_input *data, t_poly *poly);
 float					getpow3ddist(t_fdot a);
 int						alkashisolver(t_poly *poly, t_fdot col);
 t_fdot					vectoriel_product(t_fdot v1, t_fdot v2);
 float					scale(t_fdot a, t_fdot b);
 t_fdot					fix_vec(t_fdot vec);
 int						in_poly(t_poly *poly, t_fdot col);
-void					thread_start(t_input	*data, t_poly* poly);
-int 					solv_equ(t_fdot e1, t_fdot e2, t_fdot *sol);
+void					thread_start(t_input *data, t_poly *poly);
+int						solv_equ(t_fdot e1, t_fdot e2, t_fdot *sol);
 int						checkzero(float a, float inter);
-void 					rea_ray(t_input *data);
-int 					check_colli(t_poly *poly);
-void 					moove(t_input *data, int way);
+void					rea_ray(t_input *data);
+int						check_colli(t_poly *poly);
+void					moove(t_input *data, int way);
 t_3x3matrix				define_yrotmax(float a);
 t_3x3matrix				define_zrotmat(void);
 t_3x3matrix				define_minyrotmat(void);
 t_3x3matrix				define_minzrotmat(void);
-float 					get3ddist(t_fdot a, t_fdot b);
-int 					getcolli(t_input *data, t_poly *poly, t_fdot *colli, int r);
+float					get3ddist(t_fdot a, t_fdot b);
+int						getcolli(t_input *data, t_poly *poly,
+						t_fdot *colli, int r);
 void					get_plans(t_poly *poly);
 void					*ray_boxes(void *para);
-void 					mapmovep(t_poly *poly, t_fdot incr);
-void 					maprotateallp(t_fdot rot, t_input *data);
+void					mapmovep(t_poly *poly, t_fdot incr);
+void					maprotateallp(t_fdot rot, t_input *data);
 int						poly_toboxes (t_input *data, t_poly *poly);
 int						proj_2d(t_poly *map, t_input *data);
-float 					magnitude(t_fdot a);
+float					magnitude(t_fdot a);
 int						keyboard_move(int key, t_input *inputs);
 t_fdot					applymatpoint(t_3x3matrix matrix, t_fdot point);
-t_fdot 					getvect(t_fdot a, t_fdot b);
-t_2d 					get2dvect(t_2d a, t_2d b);
-void 					redefinevector(t_poly *poly);
+t_fdot					getvect(t_fdot a, t_fdot b);
+t_2d					get2dvect(t_2d a, t_2d b);
+void					redefinevector(t_poly *poly);
 int						init_var3 (t_input *data, char *file);
 int						push_back(t_poly *new, t_poly **poly);
 int						creat_elem_l(char *line, int n_line, t_line **list);
-int		  		 		sort_dot(char *line, t_poly *new, t_index *index);
-int						parse_loop(t_poly **poly, t_line *list, t_input *data, int fd);
+int						sort_dot(char *line, t_poly *new, t_index *index);
+int						parse_loop(t_poly **poly, t_line *list,
+						t_input *data, int fd);
 int						parse_file(t_line *list, t_poly **poly, t_input *data);
 int						load_tex(t_poly **poly, t_input *data);
 t_poly					*parsing_poly(char *file, t_input *data);
 char					*sort_file(char *line);
-void				   	error_file(int fd, char *av);
-void				  	poly_error(t_line *list, int error, int i, int *err);
+void					error_file(int fd, char *av);
+void					poly_error(t_line *list, int error, int i, int *err);
 void					print_s(int i);
-void    				get_device(char **device);
-void 					print_parse(t_poly *poly);
+void					get_device(char **device);
+void					print_parse(t_poly *poly);
 int						check_error(t_line *list);
-void				   	free_poly(t_poly **poly);
-void				   	free_line(t_line **line);
+void					free_poly(t_poly **poly);
+void					free_line(t_line **line);
 t_line					*read_obj(t_line *list, t_object **obj, t_input *data);
 void					push_front_obj(t_object *new, t_object **obj);
-void         		    reverse(t_object **obj);
-void         		    poly_rev(t_poly **poly) ;
-void 					obj_error(t_line *list, int *error);
+void					reverse(t_object **obj);
+void					poly_rev(t_poly **poly);
+void					obj_error(t_line *list, int *error);
 t_poly					*ft_pares_obj(char *file, t_input *data);
-int      				sort_tfdot(char *line, t_fdot *dot);
-int      				sort_t2d(char *line, t_2d *dot);
-int         			sort_poly(char *line, t_poly **poly, t_file_obj file, char *mtl);
+int						sort_tfdot(char *line, t_fdot *dot);
+int						sort_t2d(char *line, t_2d *dot);
+int						sort_poly(char *line, t_poly **poly,
+						t_file_obj file, char *mtl);
 void					free_tab(char ***tab);
 void					clear_im(t_input *data);
 void					print_parse1(t_poly *poly);
@@ -534,10 +539,12 @@ int						heal_texture_animation(t_data *data);
 int						load_menu_texture(t_data *data);
 int						shield_texture_animation(t_data *data);
 void					inter_cord(t_line *list, int *tmp, int *error, int *i);
-int						loop_read(t_line *tmp, int *count, t_poly **poly, t_input *data);
+int						loop_read(t_line *tmp, int *count,
+						t_poly **poly, t_input *data);
 t_line					*poly_read(t_line *list, t_poly **poly);
 void					free_file_obj(t_file_obj file);
-int						parse_fobj2(t_line *list, t_file_obj *file, t_input *d, t_poly **poly);
+int						parse_fobj2(t_line *list, t_file_obj *file,
+						t_input *d, t_poly **poly);
 void					free_object(t_object **obj, t_object *new);
 void					free_new_lst(t_lst_mtl *new);
 void					loop_read2(t_line *list, t_object *new, t_input *data);

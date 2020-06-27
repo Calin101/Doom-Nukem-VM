@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:14:09 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 15:14:40 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 15:16:50 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ void	close_game(t_data *data)
 		mlx_destroy_image(data->mlx_addrs, data->menu_texture[i].img.ad);
 	mlx_destroy_window(data->mlx_addrs, data->win_addrs);
 	exit(0);
+}
+
+void	print_inventory2(t_data *data)
+{
+	if (data->inventory.slot_three != 0)
+		mlx_put_image_to_window(data->mlx_addrs, data->win_addrs,
+			data->tab_tex[11].img.ad, data->pos_texture[11].x,
+			data->pos_texture[11].y);
 }
 
 int		load_texture_data(t_data *data)

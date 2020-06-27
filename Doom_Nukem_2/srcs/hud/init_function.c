@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:14:58 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 15:15:00 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 14:47:17 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ void	fill_texture_half_tab(t_data *data)
 	data->pos_texture[9] = (t_dot){.x = 615, .y = WIN_SIZE_H - 70};
 	data->name_texture[10] = "srcs/hud/images/heal_pots.xpm";
 	data->pos_texture[10] = (t_dot){.x = 712, .y = WIN_SIZE_H - 72};
+	data->name_texture[11] = "srcs/hud/images/key.xpm";
+	data->pos_texture[11] = (t_dot){.x = 810, .y = WIN_SIZE_H - 72};
 }
 
 void	fill_texture_tab(t_data *data)

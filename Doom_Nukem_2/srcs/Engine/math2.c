@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 16:46:41 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 16:46:54 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 14:16:10 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,18 @@ void	redefinevector(t_poly *poly)
 {
 	while (poly)
 	{
-		poly->vAB = getvect(poly->dot[0], poly->dot[1]);
-		poly->vBC = getvect(poly->dot[1], poly->dot[2]);
-		poly->vAC = getvect(poly->dot[0], poly->dot[2]);
-		poly->scaleAB = scale(poly->vAB, poly->vAB);
-		poly->scaleAC = scale(poly->vAC, poly->vAC);
-		poly->scaleABAC = scale(poly->vAB, poly->vAC);
-		poly->vBA = getvect(poly->dot[1], poly->dot[0]);
-		poly->vCB = getvect(poly->dot[2], poly->dot[1]);
-		poly->vCA = getvect(poly->dot[2], poly->dot[0]);
-		poly->den1 = (-poly->vAB.y * poly->vBC.z + poly->vBC.y * poly->vAB.z);
-		poly->den2 = (-poly->vAB.x * poly->vBC.y + poly->vBC.x * poly->vAB.y);
-		poly->den3 = (-poly->vAB.z * poly->vBC.x + poly->vBC.z * poly->vAB.x);
+		poly->vab = getvect(poly->dot[0], poly->dot[1]);
+		poly->vbc = getvect(poly->dot[1], poly->dot[2]);
+		poly->vac = getvect(poly->dot[0], poly->dot[2]);
+		poly->scaleab = scale(poly->vab, poly->vab);
+		poly->scaleac = scale(poly->vac, poly->vac);
+		poly->scaleabac = scale(poly->vab, poly->vac);
+		poly->vba = getvect(poly->dot[1], poly->dot[0]);
+		poly->vcb = getvect(poly->dot[2], poly->dot[1]);
+		poly->vca = getvect(poly->dot[2], poly->dot[0]);
+		poly->den1 = (-poly->vab.y * poly->vbc.z + poly->vbc.y * poly->vab.z);
+		poly->den2 = (-poly->vab.x * poly->vbc.y + poly->vbc.x * poly->vab.y);
+		poly->den3 = (-poly->vab.z * poly->vbc.x + poly->vbc.z * poly->vab.x);
 		poly = poly->next;
 	}
 }
