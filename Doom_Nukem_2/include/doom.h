@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 15:38:23 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/27 17:57:36 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 19:19:49 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,6 +253,7 @@ typedef struct			s_object
 	u_int8_t			type;
 	struct s_object		*next;
 	double				scale;
+	float				dist;
 }						t_object;
 
 typedef	struct			s_life

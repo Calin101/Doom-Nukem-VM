@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 17:12:45 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 15:41:58 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 19:54:39 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ void	collobj(t_object *obj, t_input *data)
 	if (obj->type == CHEST)
 	{
 		if (data->data_hud->keys[KEY_E] == 1)
+		{
 			add_item(data, 2);
+			obj->exist = 0;
+		}
 	}
 	else if (obj->type == KEY && (data->data_hud->inventory.slot_three > 1
 	&& data->data_hud->keys[KEY_E] == 1))
