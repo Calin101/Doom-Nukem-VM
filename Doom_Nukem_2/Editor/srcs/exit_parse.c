@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_parse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Polcito <Polcito@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:48:30 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/27 15:49:16 by Polcito          ###   ########.fr       */
+/*   Updated: 2020/06/27 21:13:52 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,31 +66,32 @@ void		draw_floor(int x, int y, t_file *file, int fd)
 	}
 }
 
-void		draw_wall(int x, int y, t_file *file, int fd)
+void        draw_wall(int x, int y, t_file *file, int fd)
 {
-	int a;
+    int a;
 
-	a = 0;
-	if (file->tab[y][x].direction == 1)
-		draw_wall_2(x, y, file, fd);
-	else
-		while (a < 2)
-		{
-			if (a == 1)
-				x++;
-			first_dot_wall(x, y, file, fd);
-			if (a == 1)
-				ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z), fd);
-			else
-				ft_putstr_fd(ft_itoa(0), fd);
-			first_dot_wall_bis(x, y, file, fd);
-			if (a == 1)
-				x--;
-			second_dot_wall(x, y, file, fd);
-			third_dot_wall(x, y, file, fd);
-			choose_textures_wall(file, fd, x, y);
-			a++;
-		}
+    a = 0;
+    if (file->tab[y][x].direction == 1)
+        draw_wall_2(x, y, file, fd);
+    else
+        while (a < 2)
+        {
+            if (a == 1)
+                x++;
+            first_dot_wall(x, y, file, fd);
+            if (a == 1)
+            {
+                x--;
+                ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z), fd);
+            }
+            else
+            	ft_putstr_fd(ft_itoa(0), fd);
+            first_dot_wall_bis(x, y, file, fd);
+            second_dot_wall(x, y, file, fd);
+            third_dot_wall(x, y, file, fd);
+            choose_textures_wall(file, fd, x, y);
+            a++;
+        }
 }
 
 void		draw_wall_2(int x, int y, t_file *file, int fd)

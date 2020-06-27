@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:49:00 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/27 17:25:18 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 20:22:14 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	hud_string(t_file *file)
 		"rot y :");
 	mlx_string_put(file->mlx_ptr, file->win_ptr, 1030, 670, 0x000000,
 		"rot z :");
+	mlx_string_put(file->mlx_ptr, file->win_ptr, 1030, 700, 0x000000,
+		"dir :");
 }
 
 void	init_hud_bis(t_file *file)
@@ -86,11 +88,12 @@ void	button_clear_save(t_file *file)
 
 void	edit_z(t_file *file)
 {
-	char *tmp;
-	char *tmp1;
-	char *tmp2;
-	char *tmp3;
+	char	*tmp;
+	char	*tmp1;
+	char	*tmp2;
+	char	*tmp3;
 
+	edit_z_2(file);
 	tmp = ft_itoa(file->tab[file->mouse.x][file->mouse.y].pos_z);
 	tmp1 = ft_itoa(file->tab[file->mouse.x][file->mouse.y].rot_x);
 	tmp2 = ft_itoa(file->tab[file->mouse.x][file->mouse.y].rot_y);

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:51:24 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/27 18:23:14 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 20:22:38 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ typedef struct			s_bresenham
 	double				c;
 }						t_bresenham;
 
+void		edit_z_2(t_file *file);
 int	        deal_key(int key, t_file *file);
 int			mouse_press(int key, int x, int y, t_file *file);
 int			mouse_move(int x, int y, t_file *file);

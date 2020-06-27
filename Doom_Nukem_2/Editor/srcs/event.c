@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:49:40 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/27 17:29:19 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 20:24:18 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int			deal_key(int key, t_file *file)
 		file->tab[file->mouse.x][file->mouse.y].rot_z -= 1;
 	if (key == 99)
 		file->tab[file->mouse.x][file->mouse.y].rot_z += 1;
-	if (key == 13)
+	if (key == 122)
 		file->tab[file->mouse.x][file->mouse.y].direction = 1;
-	if (key == 1)
+	if (key == 115)
 		file->tab[file->mouse.x][file->mouse.y].direction = 0;
 	mlx_put_image_to_window(file->mlx_ptr, file->win_ptr, file->ptr_img, 0, 0);
 	return (0);

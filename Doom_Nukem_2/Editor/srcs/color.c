@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Polcito <Polcito@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:53:07 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/27 15:53:08 by Polcito          ###   ########.fr       */
+/*   Updated: 2020/06/27 20:20:59 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,13 @@ int					get_color(t_file *file, t_bresenham brese,
 			0xFF, percentage);
 	file->color.blue = get_light(start & 0xFF, end & 0xFF, percentage);
 	return (1);
+}
+
+void				edit_z_2(t_file *file)
+{
+	char	*tmp;
+
+	tmp = ft_itoa(file->tab[file->mouse.x][file->mouse.y].direction);
+	mlx_string_put(file->mlx_ptr, file->win_ptr, 1160, 700, 0x000000, tmp);
+	free(tmp);
 }

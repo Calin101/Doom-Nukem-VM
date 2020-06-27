@@ -82,11 +82,11 @@ Polygon
 
 Object
 {
-    pos = x:20, y:20, z:0
+    pos = x:40, y:20, z:0
     rot = x:90, y:5, z:6
-	scale = 5.2
-    file = test2.obj
-	type = armor
+	scale = 3.2
+    file = fox.obj
+	type = chest
 }
 
 
