@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 17:18:03 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 19:32:44 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 23:14:11 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	check_obj(t_object *object, t_input *data)
 			obj->exist = 0;
 		if (dist <= 500 && dist > object->dist && obj->type == ENEMI)
 			agro(obj, data);
-		printf("%f                      %f\n", dist, object->dist);
 		if (dist <= object->dist)
 			collobj(obj, data);
 		obj = obj->next;

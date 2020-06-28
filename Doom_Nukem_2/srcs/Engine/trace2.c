@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   trace2.c                                         .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/06/26 18:28:17 by user42       #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 21:04:00 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   trace2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/26 18:28:17 by user42            #+#    #+#             */
+/*   Updated: 2020/06/29 00:39:07 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "doom.h"
 
 int		checkbary(t_poly *poly, t_fdot *colli)
@@ -52,13 +52,15 @@ int		getcolli(t_input *data, t_poly *poly, t_fdot *colli, int r)
 	colli->x = t * data->rays[r].x;
 	colli->y = t * data->rays[r].y;
 	colli->z = t * data->rays[r].z;
+	if (colli->x <= 0)
+		return (-1);
 	if (data->rays[r].distcolli == -1)
 	{
 		if (((ret = checkbary(poly, colli)) != -1) && ret != 0)
 			data->rays[r].distcolli = getpow3ddist(*colli);
 	}
 	else if ((dist = getpow3ddist(*colli)) < data->rays[r].distcolli)
-		if ((ret = checkbary(poly, colli)) != -1)
+		if ((ret = checkbary(poly, colli)) != -1 && ret != 0)
 			data->rays[r].distcolli = dist;
 	return (ret);
 }
@@ -103,7 +105,7 @@ void	*ray_boxes(void *para)
 		{
 			ret = process_ray((t_proray){.x = p.x, .y = p.y, 0},
 			thread->inputs, thread->poly);
-			if (ret != -1)
+			if (ret != -1 && ret != 0)
 				thread->inputs->im.tab[p.x + p.y *
 				thread->inputs->win_w] = ret;
 			p.x++;

@@ -10,12 +10,12 @@ Polygon				//Mur Fond
 }
 
 
-//Object
+Object
 {
     pos = x:0, y:0, z:5
     rot = x:0, y:0, z:0
 	scale = 3
-    file = test2.obj
+    file = ammo.obj
 	type = chest
 }
 

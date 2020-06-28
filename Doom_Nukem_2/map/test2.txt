@@ -20,6 +20,25 @@ Polygon
 
 
 
+Polygon				//Tableau Oeil
+{
+    dot = x:25, y:-99, z:10, X:0, Y:0
+    dot = x:25, y:-99, z:-10, X:0, Y:1
+    dot = x:0, y:-99, z:-10, X:1, Y:1
+    texture = oeil.xpm
+}
+
+Polygon 		//Tableau Oeil
+{
+    dot = x:25, y:-99, z:10, X:0, Y:0
+    dot = x:0, y:-99, z:10, X:1, Y:0
+    dot = x:0, y:-99, z:-10, X:1, Y:1
+    texture = oeil.xpm
+}
+
+
+
+
 
 Polygon				//Mur Fond
 {
@@ -82,10 +101,10 @@ Polygon
 
 Object
 {
-    pos = x:40, y:20, z:0
+    pos = x:20, y:20, z:0
     rot = x:90, y:5, z:6
 	scale = 3.2
-    file = potion.obj
+    file = door.obj
 	type = scene
 }
 

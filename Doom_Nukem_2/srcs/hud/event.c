@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   event.c                                          .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/20 16:26:48 by calin        #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 21:01:56 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   event.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/20 16:26:48 by calin             #+#    #+#             */
+/*   Updated: 2020/06/28 23:28:20 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "doom.h"
 
 int		mouse_moove(int x, int y, void *param)
@@ -64,10 +64,6 @@ int		redraw(void *param)
 	if (!input->data_hud->menu_state && !input->data_hud->dead_state
 	&& !input->data_hud->win_state)
 		fct_call_redraw(input);
-	if (input->angley > M_PI_2)
-		input->angley = M_PI_2;
-	if (input->angley < -M_PI_2)
-		input->angley = -M_PI_2;
 	clear_im(input);
 	if (input->data_hud->dead_state != 1 && !input->data_hud->win_state)
 	{

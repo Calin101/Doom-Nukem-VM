@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   hooks.c                                          .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/27 17:39:51 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 20:30:51 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hooks.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/27 17:39:51 by mwaterso          #+#    #+#             */
+/*   Updated: 2020/06/28 23:04:42 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "doom.h"
 
 int		checkbaryntex(t_poly *poly, t_fdot *colli)
@@ -33,7 +33,7 @@ int		checkbaryntex(t_poly *poly, t_fdot *colli)
 	else
 		beta = (poly->vab.x * alpha - ap.x) / -poly->vbc.x;
 	if (alpha < 0 || beta < 0 || alpha > 1 || beta > 1 || alpha < beta)
-		return (-1);
+		return (0);
 	return (1);
 }
 
@@ -82,12 +82,8 @@ int		check_gravity(t_poly *poly)
 		{
 			if (get3ddist((t_fdot){.x = 0, .y = 0, .z = 0},
 			ortho) < HITBOXGRAVITY)
-			{
 				if (checkbaryntex(poly, &ortho))
 					return (1);
-				//else if (checkseg(poly))
-				//	return (1);
-			}
 		}
 		poly = poly->next;
 	}
@@ -104,17 +100,8 @@ int		check_colli(t_poly *poly)
 		.y = poly->b, .z = poly->c})))
 		{
 			if (get3ddist((t_fdot){.x = 0, .y = 0, .z = 0}, ortho) < HITBOXRAY)
-			{
 				if (checkbaryntex(poly, &ortho))
-				{
-
-					printf("ortho = %f %f %f\n", ortho.x, ortho.y, ortho.z);
-
 					return (1);
-				}
-				//else if (checkseg(poly))
-				//	return (1);
-			}
 		}
 		poly = poly->next;
 	}
