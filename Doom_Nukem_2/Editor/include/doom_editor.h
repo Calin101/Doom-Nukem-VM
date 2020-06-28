@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:51:24 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/28 15:36:20 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 22:39:36 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,8 @@ typedef struct			s_bresenham
 	double				c;
 }						t_bresenham;
 
+
+void        first_dot_floor_bis(int x, int y, t_file *file, int fd);
 void		first_dot_wall_ter_2(int x, int y, t_file *file, int fd);
 void		first_dot_wall_ter(int x, int y, t_file *file, int fd);
 void		edit_z_2(t_file *file);

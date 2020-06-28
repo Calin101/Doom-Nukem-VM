@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:50:19 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/28 16:17:39 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 22:40:05 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@ void        first_dot_floor(int x, int y, t_file *file, int fd)
     ft_putstr_fd(ft_itoa(y * 200), fd);
     ft_putstr_fd(", z:", fd);
     ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z * 100), fd);
+    ft_putstr_fd(", X:", fd);
+    ft_putstr_fd(ft_itoa(0), fd);
+    ft_putstr_fd(", Y:", fd);
+    ft_putstr_fd(ft_itoa(0), fd);
+}
+
+void        first_dot_floor_bis(int x, int y, t_file *file, int fd)
+{
+    ft_putstr_fd("Polygon\n{\n\tdot = x:", fd);
+    ft_putstr_fd(ft_itoa(x * 200), fd);
+    ft_putstr_fd(", y:", fd);
+    ft_putstr_fd(ft_itoa(y * 200), fd);
+    ft_putstr_fd(", z:", fd);
+    ft_putstr_fd(ft_itoa(file->tab[y - 1][x - 1].pos_z * 100), fd);
     ft_putstr_fd(", X:", fd);
     ft_putstr_fd(ft_itoa(0), fd);
     ft_putstr_fd(", Y:", fd);
@@ -69,11 +83,11 @@ void        draw_mob(int x, int y, t_file *file, int fd)
     ft_putstr_fd(", z:", fd);
     ft_putstr_fd(ft_itoa(file->tab[y][x].rot_z), fd);
     if (file->tab[y][x].tab_state == 21)
-        ft_putstr_fd("\n\tfile = mob_1.obj\n}\n\n", fd);
+        ft_putstr_fd("\n\tfile = creeper.obj\n}\n\n", fd);
     if (file->tab[y][x].tab_state == 22)
-        ft_putstr_fd("\n\tfile = mob_2.obj\n}\n\n", fd);
+        ft_putstr_fd("\n\tfile = creeper.obj\n}\n\n", fd);
     if (file->tab[y][x].tab_state == 23)
-        ft_putstr_fd("\n\tfile = mob_3.obj\n}\n\n", fd);
+        ft_putstr_fd("\n\tfile = creeper.obj\n}\n\n", fd);
     if (file->tab[y][x].tab_state == 24)
-        ft_putstr_fd("\n\tfile = mob_4.obj\n}\n\n", fd);
+        ft_putstr_fd("\n\tfile = creeper.obj\n}\n\n", fd);
 }

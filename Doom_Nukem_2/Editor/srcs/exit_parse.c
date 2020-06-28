@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:48:30 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/28 15:35:07 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 22:39:09 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,22 @@ void		sorting_parse(t_file *file)
 	}
 }
 
-void		draw_floor(int x, int y, t_file *file, int fd)
+void        draw_floor(int x, int y, t_file *file, int fd)
 {
-	int a;
+    int a;
 
-	a = 0;
-	while (a < 2)
-	{
-		if (a == 1)
-		{
-			x++;
-			y++;
-		}
-		first_dot_floor(x, y, file, fd);
-		if (a == 1)
-		{
-			x--;
-			y--;
-		}
-		second_dot_floor(x, y, file, fd);
-		third_dot_floor(x, y, file, fd);
-		choose_textures_floor(file, fd, x, y);
-		a++;
-	}
+    a = 0;
+    while (a < 2)
+    {
+        if (a == 1)
+            first_dot_floor_bis(x + 1, y + 1, file, fd);
+        else
+            first_dot_floor(x, y, file, fd);
+        second_dot_floor(x, y, file, fd);
+        third_dot_floor(x, y, file, fd);
+        choose_textures_floor(file, fd, x, y);
+        a++;
+    }
 }
 
 void        draw_wall(int x, int y, t_file *file, int fd)

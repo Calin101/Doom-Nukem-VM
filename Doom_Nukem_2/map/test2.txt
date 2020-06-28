@@ -26,7 +26,7 @@ Polygon				//Mur Fond
    	dot = x:250, y:-100, z:100, X:0, Y:0
     dot = x:250, y:50, z:100, X:1, Y:0
     dot = x:250, y:-100, z:-100, X:0, Y:1
-    texture = t3.xpm
+    texture = grillage.xpm
 }
 
 Polygon				//Mur Fond
@@ -34,7 +34,7 @@ Polygon				//Mur Fond
     dot = x:250, y:50, z:-100, X:1, Y:1
     dot = x:250, y:50, z:100, X:1, Y:0
     dot = x:250, y:-100, z:-100, X:0, Y:1
-    texture = t3.xpm
+    texture = grillage.xpm
 }
 
 
@@ -85,7 +85,7 @@ Object
     pos = x:40, y:20, z:0
     rot = x:90, y:5, z:6
 	scale = 3.2
-    file = door.obj
+    file = potion.obj
 	type = scene
 }
 
@@ -288,7 +288,7 @@ Polygon					// Sol après rampe gauche
     dot = x:-250, y:50, z:100, X:0, Y:0
     dot = x:-250, y:200, z:100, X:1, Y:0
    	dot = x:-500, y:50, z:100, X:0, Y:1
-	texture = grillage.xpm
+	texture = m3.xpm
 }
 
 
@@ -298,7 +298,7 @@ Polygon					// Mur après rampe gauche
     dot = x:-500, y:50, z:100, X:0, Y:1
     dot = x:-500, y:200, z:100, X:1, Y:1
    	dot = x:-500, y:200, z:150, X:1, Y:0
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 Polygon					// Mur après rampe gauche
@@ -306,7 +306,7 @@ Polygon					// Mur après rampe gauche
     dot = x:-500, y:50, z:100, X:0, Y:1
     dot = x:-500, y:50, z:150, X:0, Y:0
    	dot = x:-500, y:200, z:150, X:1, Y:0
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 
@@ -315,7 +315,7 @@ Polygon					// Mur  après rampe gauche 2
     dot = x:-500, y:200, z:100, X:0, Y:0
    	dot = x:-250, y:200, z:100, X:0, Y:1
    	dot = x:-250, y:200, z:150, X:1, Y:1
-	texture = m3.xpm
+	texture = grillage.xpm
 }
 
 Polygon					// Mur après rampe gauche 2
@@ -323,7 +323,7 @@ Polygon					// Mur après rampe gauche 2
    	dot = x:-500, y:200, z:150, X:0, Y:1
     dot = x:-500, y:200, z:100, X:1, Y:0
   	dot = x:-250, y:200, z:150, X:1, Y:1
-	texture = m3.xpm
+	texture = grillage.xpm
 }
 
 
@@ -335,7 +335,7 @@ Polygon					// Mur après rampe
     dot = x:-500, y:50, z:100, X:0, Y:1
     dot = x:-500, y:-100, z:100, X:1, Y:1
    	dot = x:-500, y:-100, z:150, X:1, Y:0
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 Polygon					// Muraprès rampe 
@@ -343,7 +343,7 @@ Polygon					// Muraprès rampe
     dot = x:-500, y:50, z:100, X:0, Y:1
     dot = x:-500, y:50, z:150, X:0, Y:0
    	dot = x:-500, y:-100, z:150, X:1, Y:0
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 
@@ -354,7 +354,7 @@ Polygon					// Mur après rampe droite
     dot = x:-500, y:-100, z:100, X:0, Y:1
     dot = x:-500, y:-250, z:100, X:1, Y:1
    	dot = x:-500, y:-250, z:150, X:1, Y:0
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 Polygon					// Mur après rampe droite
@@ -362,7 +362,7 @@ Polygon					// Mur après rampe droite
     dot = x:-500, y:-100, z:100, X:0, Y:1
     dot = x:-500, y:-100, z:150, X:0, Y:0
    	dot = x:-500, y:-250, z:150, X:1, Y:0
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 Polygon					// Mur  après rampe droite 2
@@ -370,7 +370,7 @@ Polygon					// Mur  après rampe droite 2
     dot = x:-500, y:-250, z:100, X:0, Y:0
    	dot = x:-250, y:-250, z:100, X:0, Y:1
    	dot = x:-250, y:-250, z:150, X:1, Y:1
-	texture = t4.xpm
+	texture = grillage.xpm
 }
 
 Polygon					// Mur après rampe droite 2
@@ -378,5 +378,5 @@ Polygon					// Mur après rampe droite 2
    	dot = x:-500, y:-250, z:150, X:1, Y:1
     dot = x:-500, y:-250, z:100, X:1, Y:0
   	dot = x:-250, y:-250, z:150, X:0, Y:1
-	texture = t4.xpm
+	texture = grillage.xpm
 }
