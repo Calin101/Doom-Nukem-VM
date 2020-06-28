@@ -3,14 +3,14 @@ Skybox
 
 Polygon				//Mur Fond
 {
-   	dot = x:250, y:-100, z:100, X:0, Y:0
-    dot = x:250, y:50, z:100, X:1, Y:0
-    dot = x:250, y:-100, z:-100, X:0, Y:1
+   	dot = x:0, y:-100, z:100, X:0, Y:0
+    dot = x:0, y:50, z:100, X:1, Y:0
+    dot = x:0, y:-100, z:-100, X:0, Y:1
     texture = t3.xpm
 }
 
 
-Object
+//Object
 {
     pos = x:0, y:0, z:5
     rot = x:0, y:0, z:0

@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   event.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 16:26:48 by calin             #+#    #+#             */
-/*   Updated: 2020/06/28 12:35:56 by user42           ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   event.c                                          .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/20 16:26:48 by calin        #+#   ##    ##    #+#       */
+/*   Updated: 2020/06/28 21:01:56 by user42      ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "doom.h"
 
 int		mouse_moove(int x, int y, void *param)
@@ -43,7 +43,6 @@ void	fct_call_redraw(t_input *input)
 {
 	check_hooks(input);
 	check_mouse(input);
-	//moove(input, 1);
 	maprotateallp((t_fdot){.x = 0, .y = 1, .z = 0}, input);
 	redefineobj(input);
 	redefinevector(input->map);
@@ -51,6 +50,7 @@ void	fct_call_redraw(t_input *input)
 	get_plans(input->map);
 	clear_im(input);
 	proj_2d(input->map, input);
+	moove(input, 1);
 	if (input->data_hud->current_ammo == 0)
 		print_reload(input->data_hud);
 	check_obj(input->obj, input);

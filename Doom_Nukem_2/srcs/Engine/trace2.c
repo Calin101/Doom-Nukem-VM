@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   trace2.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/26 18:28:17 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 14:14:27 by user42           ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   trace2.c                                         .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/06/26 18:28:17 by user42       #+#   ##    ##    #+#       */
+/*   Updated: 2020/06/28 21:04:00 by user42      ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "doom.h"
 
 int		checkbary(t_poly *poly, t_fdot *colli)
@@ -54,7 +54,7 @@ int		getcolli(t_input *data, t_poly *poly, t_fdot *colli, int r)
 	colli->z = t * data->rays[r].z;
 	if (data->rays[r].distcolli == -1)
 	{
-		if ((ret = checkbary(poly, colli)) != -1)
+		if (((ret = checkbary(poly, colli)) != -1) && ret != 0)
 			data->rays[r].distcolli = getpow3ddist(*colli);
 	}
 	else if ((dist = getpow3ddist(*colli)) < data->rays[r].distcolli)

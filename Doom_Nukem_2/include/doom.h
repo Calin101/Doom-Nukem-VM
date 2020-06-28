@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   doom.h                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/15 15:38:23 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/28 12:53:12 by user42           ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   doom.h                                           .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/05/15 15:38:23 by mwaterso     #+#   ##    ##    #+#       */
+/*   Updated: 2020/06/28 22:33:21 by user42      ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef DOOM_H
 # define DOOM_H
 
@@ -399,6 +399,8 @@ typedef struct			s_file_obj
 	int					tex;
 }						t_file_obj;
 
+int 					clgame(void *param);
+void					coll2(t_object *obj, t_input *data);
 void					win_anim(t_data *data);
 int						gettex(float ab, float bc, t_poly *poly);
 int						tallnomin(int a, int b);
@@ -409,7 +411,7 @@ void					agro(t_object *obj, t_input *data);
 void					rot_sky(t_input *data, t_fdot rot);
 t_ray					*tab_ray(int nbrpix, t_input *data);
 void					cp_dotsobj(t_object *obj);
-int						cp_dots(t_poly *poly);
+int						cp_dots(t_poly *poly, int isobj);
 void					free_addr(t_input *input, t_data *data);
 void					check_mouse(t_input *input);
 void					check_hooks(t_input *input);

@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 14:17:42 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/28 12:56:57 by user42           ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   main.c                                           .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/11/05 14:17:42 by mwaterso     #+#   ##    ##    #+#       */
+/*   Updated: 2020/06/28 22:32:08 by user42      ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "doom.h"
 
 int		init_var3(t_input *data, char *file)
@@ -88,6 +88,7 @@ void	loopandhooks(t_input *data, t_data *input)
 	mlx_hook(data->win_ad, 3, 1L << 1, key_release, data);
 	mlx_hook(data->win_ad, 4, 1L << 2, mouse_press, input);
 	mlx_hook(data->win_ad, 5, 1L << 3, mouse_release, input);
+	mlx_hook(data->win_ad, 33, 1L << 17, clgame, input);
 	mlx_loop_hook(data->mlx_ad, redraw, data);
 	mlx_loop(data->mlx_ad);
 }
@@ -112,7 +113,7 @@ int		main(int c, char **v)
 		return (0);
 	}
 	gettimeofday(&input.timer.save_time, NULL);
-	cp_dots(data.map);
+	cp_dots(data.map, 0);
 	cp_dotsobj(data.obj);
 	data.rays = tab_ray(data.win_h * data.win_w, &data);
 	get_plans(data.map);

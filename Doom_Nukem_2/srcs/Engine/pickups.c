@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pickups.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/26 17:12:45 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 19:54:39 by user42           ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   pickups.c                                        .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/06/26 17:12:45 by user42       #+#   ##    ##    #+#       */
+/*   Updated: 2020/06/28 20:02:46 by user42      ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../include/doom.h"
 
 void	add_item(t_input *data, int id)
@@ -50,11 +50,8 @@ void	coolobj_norm(t_object *obj, t_input *data)
 		add_item(data, 3);
 		obj->exist = 0;
 	}
-	else if (obj->type == SCEN)
-	{
-		add_item(data, 2);
-		obj->exist = 0;
-	}
+	else 
+		coll2(obj, data);
 }
 
 void	collobj(t_object *obj, t_input *data)

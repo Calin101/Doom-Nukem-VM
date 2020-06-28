@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils_fct.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/26 16:13:17 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 14:16:10 by user42           ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   utils_fct.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/06/26 16:13:17 by user42       #+#   ##    ##    #+#       */
+/*   Updated: 2020/06/28 21:00:04 by user42      ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "doom.h"
 
 t_ray	*tab_ray(int nbrpix, t_input *data)
@@ -47,7 +47,7 @@ void	initialize_vec_poly(t_poly *poly)
 	poly->scaleabac = scale(poly->vab, poly->vac);
 }
 
-int		cp_dots(t_poly *poly)
+int		cp_dots(t_poly *poly, int isobj)
 {
 	int i;
 	int xmax;
@@ -57,6 +57,12 @@ int		cp_dots(t_poly *poly)
 	ymax = poly->tex_tab.height - 1;
 	while (poly)
 	{
+		i = -1;
+		if (isobj)
+		{
+			while (++i < 4)
+				poly->cord[i].y = 1 - poly->cord[i].y;
+		}
 		i = -1;
 		poly->ab = get2dvect((t_2d){.x = poly->cord[0].x * xmax, .y =
 		poly->cord[0].y * ymax}, (t_2d){.x = poly->cord[1].x * xmax,
@@ -78,7 +84,7 @@ void	cp_dotsobj(t_object *obj)
 {
 	while (obj)
 	{
-		cp_dots(obj->poly);
+		cp_dots(obj->poly, 1);
 		obj->posrx = obj->pos;
 		obj->exist = 1;
 		obj->hp = 100;

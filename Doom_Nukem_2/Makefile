@@ -24,6 +24,7 @@ SRC_NAME += srcs/Engine/math.c\
 			srcs/Engine/objects.c\
 			srcs/Engine/pickups.c\
 			srcs/Engine/pickups2.c\
+			srcs/Engine/pickups3.c\
 			srcs/Engine/utils_fct.c
 
 
