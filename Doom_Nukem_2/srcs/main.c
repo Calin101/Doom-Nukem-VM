@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:17:42 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/27 15:19:06 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 12:56:57 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	init_var2(t_data *data)
 	data->inventory.slot_three = 0;
 	data->menu_state = 1;
 	data->dead_state = 0;
+	data->win_state = 0;
 	data->first_frame = 0;
 }
 
@@ -62,6 +63,7 @@ void	init_var(t_input *inputs, t_data *data)
 	inputs->win_h = WIN_SIZE_H;
 	inputs->angley = 0;
 	inputs->debug = 0;
+	inputs->speed = 1;
 	inputs->nbrtour = 0;
 	inputs->screensize = inputs->win_h * inputs->win_w;
 	inputs->rotz = define_zrotmat();

@@ -1,0 +1,51 @@
+Skybox
+	texture = skybox.xpm
+
+Polygon
+{
+	dot = x:0, y:0, z:0, X:0, Y:0
+	dot = x:9600, y:0, z:0, X:1, Y:0
+	dot = x:0, y:8400, z:0, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:9600, y:8400, z:0, X:0, Y:0
+	dot = x:9600, y:0, z:0, X:1, Y:0
+	dot = x:0, y:8400, z:0, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:1200, y:400, z:500, X:0, Y:0
+	dot = x:1400, y:400, z:500, X:1, Y:0
+	dot = x:1200, y:600, z:500, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:1400, y:600, z:0, X:0, Y:0
+	dot = x:1400, y:400, z:500, X:1, Y:0
+	dot = x:1200, y:600, z:500, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:1200, y:800, z:400, X:0, Y:0
+	dot = x:1400, y:800, z:400, X:1, Y:0
+	dot = x:1200, y:1000, z:400, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:1400, y:1000, z:0, X:0, Y:0
+	dot = x:1400, y:800, z:400, X:1, Y:0
+	dot = x:1200, y:1000, z:400, X:0, Y:1
+	texture = t3.xpm
+}
+

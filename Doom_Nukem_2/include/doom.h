@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 15:38:23 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/27 19:19:49 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 12:53:12 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -329,6 +329,7 @@ typedef struct			s_data
 	int					total_ammo;
 	int					current_ammo;
 	int					dead_state;
+	int					win_state;
 	int					menu_state;
 	int					first_frame;
 	int					diff;
@@ -366,6 +367,7 @@ typedef struct			s_input
 	float				cons1;
 	float				cons2;
 	t_object			end;
+	float				speed;
 }						t_input;
 
 typedef struct			s_lstex
@@ -397,6 +399,7 @@ typedef struct			s_file_obj
 	int					tex;
 }						t_file_obj;
 
+void					win_anim(t_data *data);
 int						gettex(float ab, float bc, t_poly *poly);
 int						tallnomin(int a, int b);
 void					get_sky(t_input *data);

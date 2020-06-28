@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 13:45:19 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 19:35:58 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 12:06:57 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void		rotate_obj(t_object *new)
 	rotate_obj1(tmp, &min, &max);
 	new->dist = get3ddist(max, (t_fdot){.x = 0, .y = 0, .z = 0}) * new->scale;
 	set_center(&center, min, max);
-	tmp = new->poly;
 	while (tmp)
 	{
 		i = -1;

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 15:48:30 by Polcito           #+#    #+#             */
-/*   Updated: 2020/06/27 21:13:52 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 15:35:07 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,40 +82,39 @@ void        draw_wall(int x, int y, t_file *file, int fd)
             if (a == 1)
             {
                 x--;
-                ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z), fd);
+                ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z * 100), fd);
+                first_dot_wall_ter(x, y, file, fd);
             }
             else
-            	ft_putstr_fd(ft_itoa(0), fd);
-            first_dot_wall_bis(x, y, file, fd);
+                first_dot_wall_bis(x, y, file, fd);
             second_dot_wall(x, y, file, fd);
             third_dot_wall(x, y, file, fd);
-            choose_textures_wall(file, fd, x, y);
             a++;
         }
 }
 
-void		draw_wall_2(int x, int y, t_file *file, int fd)
+void        draw_wall_2(int x, int y, t_file *file, int fd)
 {
-	int a;
+    int a;
 
-	a = 0;
-	while (a < 2)
-	{
-		if (a == 1)
-			y++;
-		first_dot_wall_2(x, y, file, fd);
-		if (a == 1)
-			ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z), fd);
-		else
-			ft_putstr_fd(ft_itoa(0), fd);
-		first_dot_wall_bis_2(x, y, file, fd);
-		if (a == 1)
-			y--;
-		second_dot_wall_2(x, y, file, fd);
-		third_dot_wall_2(x, y, file, fd);
-		choose_textures_wall(file, fd, x, y);
-		a++;
-	}
+    a = 0;
+    while (a < 2)
+    {
+        if (a == 1)
+            y++;
+        first_dot_wall_2(x, y, file, fd);
+        if (a == 1)
+        {
+            y--;
+            ft_putstr_fd(ft_itoa(file->tab[y][x].pos_z * 100), fd);
+            first_dot_wall_ter_2(x, y, file, fd);
+        }
+        else
+            first_dot_wall_bis_2(x, y, file, fd);
+        second_dot_wall_2(x, y, file, fd);
+        third_dot_wall_2(x, y, file, fd);
+        a++;
+    }
 }
 
 void		draw_mob_and_object(int x, int y, t_file *file, int fd)

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:33:24 by user42            #+#    #+#             */
-/*   Updated: 2020/06/27 18:14:42 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 12:58:43 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		mouse_press(int button, int x, int y, void *param)
 	}
 	if (data->menu_state == 1 && (x > 625 && x < 915 && y > 576 && y < 671))
 		ft_putendl("Usage: cd Editor/ && ./doom_editor");
-	if ((data->menu_state == 1 || data->dead_state == 1)
+	if ((data->menu_state == 1 || data->dead_state == 1 || data->win_state == 1)
 	&& (x > 625 && x < 915 && y > 727 && y < 822))
 		close_game(data);
 	if (y > 0)
@@ -55,6 +55,7 @@ int		key_release(int keycode, void *param)
 	t_input *data;
 
 	data = (t_input *)param;
+	data->speed = 1;
 	data->data_hud->keys[keycode] = 0;
 	return (0);
 }
@@ -74,10 +75,12 @@ int		key_press(int keycode, void *param)
 		data->data_hud->menu_state = 1;
 	}
 	if (keycode == KEY_T)
-		dead_anim(data->data_hud);
+		win_anim(data->data_hud);
 	if (keycode == KEY_R)
 		data->data_hud->keys[keycode] = 1;
 	if (keycode == KEY_E)
+		data->data_hud->keys[keycode] = 1;
+	if (keycode == KEY_SHIFT_LEFT)
 		data->data_hud->keys[keycode] = 1;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:26:48 by calin             #+#    #+#             */
-/*   Updated: 2020/06/27 19:49:59 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 12:35:56 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int		mouse_moove(int x, int y, void *param)
 	int		dy;
 
 	data = (t_input *)param;
-	if (!data->data_hud->menu_state && !data->data_hud->dead_state)
+	if (!data->data_hud->menu_state && !data->data_hud->dead_state 
+	&& !data->data_hud->win_state)
 	{
 		dx = WIN_SIZE_W / 2 - x;
 		dy = WIN_SIZE_H / 2 - y;
@@ -60,14 +61,15 @@ int		redraw(void *param)
 	t_input *input;
 
 	input = (t_input *)param;
-	if (!input->data_hud->menu_state && !input->data_hud->dead_state)
+	if (!input->data_hud->menu_state && !input->data_hud->dead_state
+	&& !input->data_hud->win_state)
 		fct_call_redraw(input);
 	if (input->angley > M_PI_2)
 		input->angley = M_PI_2;
 	if (input->angley < -M_PI_2)
 		input->angley = -M_PI_2;
 	clear_im(input);
-	if (input->data_hud->dead_state != 1)
+	if (input->data_hud->dead_state != 1 && !input->data_hud->win_state)
 	{
 		check_anim(input->data_hud);
 		print_hud(input->data_hud);

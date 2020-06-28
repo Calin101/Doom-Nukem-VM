@@ -56,6 +56,7 @@ SRC_NAME += srcs/hud/check_event.c       \
             srcs/hud/hud.c               \
             srcs/hud/init_function.c     \
             srcs/hud/timer.c             \
+			srcs/hud/win.c				 \
 
 
 LIBFT = libft/libft.a

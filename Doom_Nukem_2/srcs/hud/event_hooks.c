@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:35:02 by user42            #+#    #+#             */
-/*   Updated: 2020/06/26 15:35:49 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 13:05:54 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	check_hooks3(t_input *inputs, int key)
 		maprotateallp((t_fdot){.x = 0, .y = 0, .z = -1}, inputs);
 	else if (key == KEY_D)
 		maprotateallp((t_fdot){.x = 0, .y = 0, .z = 1}, inputs);
+	if (key == KEY_SHIFT_LEFT)
+		inputs->speed = 2.0;
 }
 
 void	check_hooks2(t_input *input, int key)

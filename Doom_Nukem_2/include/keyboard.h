@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 17:41:17 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/27 14:12:52 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/28 12:49:52 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@
 # define KEY_SIMPLE_QUOTE   39
 # define KEY_FLOAT_QUOTES  	39
 # define KEY_ENTER          36
-# define KEY_SHIFT_LEFT     257
+# define KEY_SHIFT_LEFT     65505
 # define KEY_Z              6
 # define KEY_X              7
 # define KEY_C              8
