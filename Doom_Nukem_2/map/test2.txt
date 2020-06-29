@@ -14,7 +14,7 @@ Polygon
     dot = x:250, y:-100, z:100, X:0, Y:0
     dot = x:0, y:-100, z:100, X:1, Y:0
     dot = x:0, y:-100, z:-100, X:1, Y:1
-    texture = t3.xpm
+    texture = t4.xpm
 }
 
 
@@ -73,7 +73,7 @@ Polygon				//Mur Droite
    	dot = x:0, y:50, z:100, X:1, Y:0
     dot = x:0, y:50, z:-100, X:1, Y:1
     dot = x:250, y:50, z:-100, X:0, Y:1
-    texture = t3.xpm
+    texture = t4.xpm
 }
 
 
@@ -87,7 +87,7 @@ Polygon            //plafond
     dot = x:250, y:-100, z:100, X:0, Y:0
     dot = x:250, y:50, z:100, X:0, Y:1
     dot = x:0, y:-100, z:100, X:1, Y:0
-	texture = t4.xpm
+	texture = m3.xpm
 }
 
 Polygon
@@ -95,37 +95,38 @@ Polygon
     dot = x:0, y:50, z:100, X:1, Y:1
     dot = x:250, y:50, z:100, X:0, Y:1
     dot = x:0, y:-100, z:100, X:1, Y:0
-	texture = oeil.xpm
+	texture = m3.xpm
 }
 
 
 Object
 {
-    pos = x:20, y:20, z:0
-    rot = x:90, y:5, z:6
+    pos = x:125, y:-25, z:140
+    rot = x:90, y:0, z:0
 	scale = 3.2
-    file = door.obj
-	type = scene
+    file = chest.obj
+	type = chest
 }
-
 
 
 
 Polygon            //Sol
 {
     dot = x:250, y:-100, z:-100, X:0, Y:0
-    dot = x:250, y:50, z:-100, X:0, Y:1
-    dot = x:0, y:-100, z:-100, X:1, Y:0
-    texture = sol1.xpm
+    dot = x:250, y:50, z:-100, X:1, Y:0
+    dot = x:0, y:-100, z:-100, X:0, Y:1
+    texture = sole2.xpm
 }
 
 Polygon
 {
     dot = x:0, y:50, z:-100, X:1, Y:1
-    dot = x:250, y:50, z:-100, X:0, Y:1
-    dot = x:0, y:-100, z:-100, X:1, Y:0
-    texture = sol1.xpm
+    dot = x:250, y:50, z:-100, X:1, Y:0
+    dot = x:0, y:-100, z:-100, X:0, Y:1
+    texture = sole2.xpm
 }
+
+
 
 
 
@@ -226,7 +227,7 @@ Polygon
     dot = x:0, y:50, z:-100, X:1, Y:1
     dot = x:-250, y:50, z:100, X:0, Y:1
     dot = x:0, y:-100, z:-100, X:1, Y:0
-    texture = t3.xpm
+    texture = m3.xpm
 }
 
 
@@ -249,12 +250,112 @@ Polygon					// Mur rampe
 }
 
 
+
+
+
+Polygon					// Mur rampe au dessus
+{
+    dot = x:0, y:50, z:300, X:0, Y:0
+    dot = x:0, y:50, z:100, X:0, Y:1
+    dot = x:-250, y:50, z:300, X:1, Y:0
+	texture = t4.xpm
+}
+
+Polygon					// Mur rampe au dessus
+{
+    dot = x:-250, y:50, z:100, X:1, Y:1
+    dot = x:0, y:50, z:100, X:0, Y:1
+    dot = x:-250, y:50, z:300, X:1, Y:0
+	texture = t4.xpm
+}
+
+
+Polygon					// Mur rampe au dessus
+{
+    dot = x:0, y:-100, z:300, X:0, Y:0
+    dot = x:0, y:-100, z:100, X:0, Y:1
+    dot = x:-250, y:-100, z:300, X:1, Y:0
+	texture = t4.xpm
+}
+
+Polygon					// Mur rampe au dessus
+{
+    dot = x:-250, y:-100, z:100, X:1, Y:1
+    dot = x:0, y:-100, z:100, X:0, Y:1
+    dot = x:-250, y:-100, z:300, X:1, Y:0
+	texture = t4.xpm
+}
+
+
+
+
+Polygon					// Mur rampe au dessus 2
+{
+    dot = x:0, y:200, z:300, X:0, Y:0
+    dot = x:0, y:200, z:100, X:0, Y:1
+    dot = x:-250, y:200, z:300, X:1, Y:0
+	texture = t4.xpm
+}
+
+Polygon					// Mur rampe au dessus 2
+{
+    dot = x:-250, y:200, z:100, X:1, Y:1
+    dot = x:0, y:200, z:100, X:0, Y:1
+    dot = x:-250, y:200, z:300, X:1, Y:0
+	texture = t4.xpm
+}
+
+
+
+
+
+Polygon            //plafond au dessus rampe  2
+{
+    dot = x:0, y:50, z:300, X:0, Y:0
+    dot = x:0, y:200, z:300, X:0, Y:1
+    dot = x:-250, y:50, z:300, X:1, Y:0
+	texture = t3.xpm
+}
+
+Polygon
+{
+    dot = x:-250, y:200, z:300, X:1, Y:1
+    dot = x:0, y:200, z:300, X:0, Y:1
+    dot = x:-250, y:50, z:300, X:1, Y:0
+	texture = t3.xpm
+}
+
+
+
+Polygon            //plafond au dessus rampe
+{
+    dot = x:0, y:-100, z:300, X:0, Y:0
+    dot = x:0, y:50, z:300, X:0, Y:1
+    dot = x:-250, y:-100, z:300, X:1, Y:0
+	texture = t3.xpm
+}
+
+Polygon
+{
+    dot = x:-250, y:50, z:300, X:1, Y:1
+    dot = x:0, y:50, z:300, X:0, Y:1
+    dot = x:-250, y:-100, z:300, X:1, Y:0
+	texture = t3.xpm
+}
+
+
+
+
+
+
+
+
 Polygon					// Sol après rampe
 {
     dot = x:-250, y:-100, z:100, X:0, Y:0
     dot = x:-250, y:50, z:100, X:1, Y:0
    	dot = x:-500, y:-100, z:100, X:0, Y:1
-	texture = t4.xpm
+	texture = sole4.xpm
 }
 
 Polygon					// Sol après rampe
@@ -262,16 +363,9 @@ Polygon					// Sol après rampe
     dot = x:-500, y:-100, z:100, X:0, Y:1
     dot = x:-500, y:50, z:100, X:1, Y:1
    	dot = x:-250, y:50, z:100, X:1, Y:0
-	texture = t4.xpm
+	texture = sole4.xpm
 }
 
-Polygon					// Sol après rampe
-{
-    dot = x:-250, y:-100, z:100, X:0, Y:0
-    dot = x:-250, y:50, z:100, X:1, Y:0
-   	dot = x:-500, y:-100, z:100, X:0, Y:1
-	texture = t4.xpm
-}
 
 
 
@@ -281,7 +375,7 @@ Polygon					// Sol après rampe droite
     dot = x:-500, y:-250, z:100, X:0, Y:1
     dot = x:-500, y:-100, z:100, X:1, Y:1
    	dot = x:-250, y:-100, z:100, X:1, Y:0
-	texture = t4.xpm
+	texture = sole4.xpm
 }
 
 Polygon					// Sol après rampe droite
@@ -289,7 +383,7 @@ Polygon					// Sol après rampe droite
     dot = x:-250, y:-250, z:100, X:0, Y:0
     dot = x:-250, y:-100, z:100, X:1, Y:0
    	dot = x:-500, y:-250, z:100, X:0, Y:1
-	texture = t4.xpm
+	texture = sole4.xpm
 }
 
 
@@ -299,7 +393,7 @@ Polygon					// Sol après rampe gauche
     dot = x:-500, y:50, z:100, X:0, Y:1
     dot = x:-500, y:200, z:100, X:1, Y:1
    	dot = x:-250, y:200, z:100, X:1, Y:0
-	texture = m3.xpm
+	texture = sole4.xpm
 }
 
 Polygon					// Sol après rampe gauche
@@ -307,7 +401,7 @@ Polygon					// Sol après rampe gauche
     dot = x:-250, y:50, z:100, X:0, Y:0
     dot = x:-250, y:200, z:100, X:1, Y:0
    	dot = x:-500, y:50, z:100, X:0, Y:1
-	texture = m3.xpm
+	texture = sole4.xpm
 }
 
 
@@ -384,26 +478,54 @@ Polygon					// Mur après rampe droite
 	texture = grillage.xpm
 }
 
+
+
+
+
+
 Polygon					// Mur  après rampe droite 2
 {
-    dot = x:-500, y:-250, z:100, X:0, Y:0
-   	dot = x:-250, y:-250, z:100, X:0, Y:1
-   	dot = x:-250, y:-250, z:150, X:1, Y:1
+    dot = x:-500, y:-250, z:100, X:0, Y:1
+   	dot = x:-250, y:-250, z:100, X:1, Y:1
+   	dot = x:-250, y:-250, z:150, X:1, Y:0
 	texture = grillage.xpm
 }
 
 Polygon					// Mur après rampe droite 2
 {
-   	dot = x:-500, y:-250, z:150, X:1, Y:1
-    dot = x:-500, y:-250, z:100, X:1, Y:0
-  	dot = x:-250, y:-250, z:150, X:0, Y:1
+   	dot = x:-500, y:-250, z:150, X:0, Y:0
+    dot = x:-500, y:-250, z:100, X:0, Y:1
+  	dot = x:-250, y:-250, z:150, X:1, Y:0
 	texture = grillage.xpm
 }
 
+
+
+
+Polygon					// Mur après rampe droite
+{
+    dot = x:-250, y:-100, z:100, X:0, Y:1
+    dot = x:-250, y:-250, z:100, X:1, Y:1
+   	dot = x:-250, y:-250, z:150, X:1, Y:0
+	texture = grillage.xpm
+}
+
+Polygon					// Mur après rampe droite
+{
+    dot = x:-250, y:-100, z:100, X:0, Y:1
+    dot = x:-250, y:-100, z:150, X:0, Y:0
+   	dot = x:-250, y:-250, z:150, X:1, Y:0
+	texture = grillage.xpm
+}
+
+
+
+
+
 Polygon				//gauche
 {
-   	dot = x:255, y:-100, z:100, X:0, Y:0
-    dot = x:255, y:125, z:100, X:1, Y:0
+   	dot = x:255, y:-100, z:320, X:0, Y:0
+    dot = x:255, y:125, z:320, X:1, Y:0
     dot = x:255, y:-100, z:-100, X:0, Y:1
     texture = t3.xpm
 }
@@ -411,7 +533,7 @@ Polygon				//gauche
 Polygon				//gauche porte
 {
    	dot = x:255, y:-100, z:-100, X:0, Y:0
-    dot = x:255, y:125, z:100, X:1, Y:0
+    dot = x:255, y:125, z:320, X:1, Y:0
     dot = x:255, y:125, z:-100, X:0, Y:1
     texture = t3.xpm
 }
@@ -420,8 +542,8 @@ Polygon				//gauche porte
 
 Polygon				//droite porte
 {
-   	dot = x:255, y:235, z:100, X:0, Y:0
-    dot = x:255, y:485, z:100, X:1, Y:0
+   	dot = x:255, y:235, z:320, X:0, Y:0
+    dot = x:255, y:485, z:320, X:1, Y:0
     dot = x:255, y:235, z:-100, X:0, Y:1
     texture = t3.xpm
 }
@@ -429,16 +551,16 @@ Polygon				//droite porte
 Polygon				//droite porte
 {
    	dot = x:255, y:235, z:-100, X:0, Y:0
-    dot = x:255, y:485, z:100, X:1, Y:0
+    dot = x:255, y:485, z:320, X:1, Y:0
     dot = x:255, y:485, z:-100, X:0, Y:1
     texture = t3.xpm
 }
 
 Polygon				//porte dessus
 {
-   	dot = x:255, y:125, z:100, X:0, Y:0
+   	dot = x:255, y:125, z:320, X:0, Y:0
     dot = x:255, y:125, z:65, X:1, Y:0
-    dot = x:255, y:235, z:100, X:0, Y:1
+    dot = x:255, y:235, z:320, X:0, Y:1
     texture = t3.xpm
 }
 
@@ -446,7 +568,7 @@ Polygon				//porte dessus
 {
    	dot = x:255, y:235, z:65, X:0, Y:0
     dot = x:255, y:125, z:65, X:1, Y:0
-    dot = x:255, y:235, z:100, X:0, Y:1
+    dot = x:255, y:235, z:320, X:0, Y:1
     texture = t3.xpm
 }
 
@@ -460,7 +582,140 @@ Object
 }
 
 
+Polygon            // Rampe sol vers porte
+{
+    dot = x:-250, y:50, z:100, X:0, Y:0
+    dot = x:-250, y:200, z:100, X:0, Y:1
+    dot = x:0, y:50, z:-100, X:1, Y:0
+    texture = m3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:200, z:-100, X:1, Y:1
+    dot = x:-250, y:200, z:100, X:0, Y:1
+    dot = x:0, y:50, z:-100, X:1, Y:0
+    texture = t3.xpm
+}
+
+
+Polygon            //Sol apr-s rampe vers porte
+{
+    dot = x:500, y:50, z:-100, X:0, Y:0
+    dot = x:500, y:200, z:-100, X:0, Y:1
+    dot = x:0, y:50, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:200, z:-100, X:1, Y:1
+    dot = x:500, y:200, z:-100, X:0, Y:1
+    dot = x:0, y:50, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
+Polygon            //Sol apr-s rampe vers porte 2
+{
+    dot = x:500, y:200, z:-100, X:0, Y:0
+    dot = x:500, y:350, z:-100, X:0, Y:1
+    dot = x:0, y:200, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:350, z:-100, X:1, Y:1
+    dot = x:500, y:350, z:-100, X:0, Y:1
+    dot = x:0, y:200, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
+Polygon            //Sol apr-s rampe vers porte 3
+{
+    dot = x:500, y:350, z:-100, X:0, Y:0
+    dot = x:500, y:500, z:-100, X:0, Y:1
+    dot = x:0, y:350, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:500, z:-100, X:1, Y:1
+    dot = x:500, y:500, z:-100, X:0, Y:1
+    dot = x:0, y:350, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
+Polygon            // Mur salle porte
+{
+    dot = x:250, y:475, z:300, X:0, Y:0
+    dot = x:250, y:475, z:-100, X:0, Y:1
+    dot = x:0, y:475, z:300, X:1, Y:0
+    texture = t3.xpm
+}
+
+Polygon
+{
+    dot = x:250, y:475, z:-100, X:0, Y:1
+    dot = x:0, y:475, z:300, X:1, Y:075
+    dot = x:0, y:475, z:-100, X:1, Y:1
+    texture = t3.xpm
+}
 
 
 
 
+Polygon            // Mur sale porte
+{
+    dot = x:0, y:475, z:-100, X:0, Y:0
+    dot = x:0, y:200, z:-100, X:0, Y:1
+    dot = x:0, y:200, z:300, X:1, Y:0
+    texture = t3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:475, z:-100, X:0, Y:1
+    dot = x:0, y:200, z:300, X:1, Y:0
+    dot = x:0, y:475, z:300, X:1, Y:1
+    texture = t3.xpm
+}
+
+
+Polygon					// Mur rampe vers porte
+{
+    dot = x:0, y:200, z:100, X:0, Y:0
+    dot = x:0, y:200, z:-100, X:0, Y:1
+    dot = x:-250, y:200, z:100, X:1, Y:0
+	texture = t4.xpm
+}
+
+
+
+
+
+Polygon            //plafond au dessus salle porte  
+{
+    dot = x:250, y:50, z:300, X:0, Y:0
+    dot = x:250, y:475, z:300, X:0, Y:1
+    dot = x:0, y:50, z:300, X:1, Y:0
+	texture = t3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:475, z:300, X:1, Y:1
+    dot = x:250, y:475, z:300, X:0, Y:1
+    dot = x:0, y:50, z:300, X:1, Y:0
+	texture = t3.xpm
+}
+
+Object
+{
+    pos = x:300, y:100, z:0
+    rot = x:180, y:0, z:0
+	scale = 3.2
+    file = end.obj
+	type = end
+}

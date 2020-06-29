@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   pickups.c                                        .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/06/26 17:12:45 by user42       #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 20:02:46 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pickups.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/26 17:12:45 by user42            #+#    #+#             */
+/*   Updated: 2020/06/29 16:52:44 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "../include/doom.h"
 
 void	add_item(t_input *data, int id)
@@ -65,7 +65,7 @@ void	collobj(t_object *obj, t_input *data)
 			obj->exist = 0;
 		}
 	}
-	else if (obj->type == KEY && (data->data_hud->inventory.slot_three > 1
+	else if (obj->type == KEY && (data->data_hud->inventory.slot_three >= 1
 	&& data->data_hud->keys[KEY_E] == 1))
 	{
 		data->data_hud->inventory.slot_three--;

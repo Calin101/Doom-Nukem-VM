@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:17:42 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/29 14:25:22 by user42           ###   ########.fr       */
+/*   Updated: 2020/06/29 17:14:33 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	init_var2(t_data *data)
 	i = -1;
 	while (++i < 280)
 		data->keys[i] = -1;
-	data->inventory = (t_inventory){.slot_one = 7, .slot_two = 8,
-	.slot_three = 1, .slot_four = 0};
+	data->inventory = (t_inventory){.slot_one = 3, .slot_two = 0,
+	.slot_three = 0, .slot_four = 0};
 	data->health_bar = (t_life){.x_min = 1400, .x_max = 1556, .y_min = 813,
 	.y_max = 831, .health = 20, .shield = 0};
 	data->current_ammo = 30;
