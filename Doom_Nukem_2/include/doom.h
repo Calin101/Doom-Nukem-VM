@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 15:38:23 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/29 13:32:40 by user42           ###   ########.fr       */
+/*   Updated: 2020/06/29 18:49:44 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <sys/time.h>
-# define NB_THREAD		4
+# define NB_THREAD		8
 # define NB_TEXTURE		4
 # define NB_HUD_TEX		16
 # define NB_ANIM_TEX	4
 # define WIN_SIZE_W		1600
 # define WIN_SIZE_H		900
-# define HITBOXRAY		8
+# define HITBOXRAY		10
 # define HITBOXGRAVITY	50
 # define X_VIEW			1.57079632679
 # define Z_VIEW			1.57079632679
@@ -401,7 +401,7 @@ typedef struct			s_file_obj
 
 void					rev_moove(t_input *data, int way);
 void					chckdoorcolli(int way, t_object *obj, t_input *data);
-int 					clgame(void *param);
+int						clgame(void *param);
 void					coll2(t_object *obj, t_input *data);
 void					win_anim(t_data *data);
 int						gettex(float ab, float bc, t_poly *poly);

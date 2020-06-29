@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 18:28:17 by user42            #+#    #+#             */
-/*   Updated: 2020/06/29 15:23:39 by user42           ###   ########.fr       */
+/*   Updated: 2020/06/29 18:56:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		getcolli(t_input *data, t_poly *poly, t_fdot *colli, int r)
 	}
 	else if ((dist = getpow3ddist(*colli)) < data->rays[r].distcolli)
 		if ((ret = checkbary(poly, colli)) != -1 && ret != 0)
-			data->rays[r].distcolli = dist; 
+			data->rays[r].distcolli = dist;
 	return (ret);
 }
 
@@ -74,7 +74,7 @@ int		getcollishot(t_input *data, t_poly *poly, t_fdot *colli, int r)
 	ret = -1;
 	if (!(det = (poly->a * data->rays[r].x + poly->b *
 	data->rays[r].y + poly->c * data->rays[r].z)))
-		return (-1);
+		return (0);
 	t = -poly->d / det;
 	colli->x = t * data->rays[r].x;
 	colli->y = t * data->rays[r].y;
@@ -106,10 +106,8 @@ void	*ray_boxes(void *para)
 			ret = process_ray((t_proray){.x = p.x, .y = p.y, 0},
 			thread->inputs, thread->poly);
 			if (ret != -1 && ret != 0)
-			{
 				thread->inputs->im.tab[p.x + p.y *
 				thread->inputs->win_w] = ret;
-			}
 			p.x++;
 			if (p.x == thread->box.amax.x)
 			{

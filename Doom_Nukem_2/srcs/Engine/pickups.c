@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pickups.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 17:12:45 by user42            #+#    #+#             */
-/*   Updated: 2020/06/29 16:52:44 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 18:55:21 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	add_item(t_input *data, int id)
 
 void	hit_player(t_input *data)
 {
-	data->data_hud->health_bar.health -= 20 * data->data_hud->diff;
+	data->data_hud->health_bar.health -= 20 * 1;
 	if (data->data_hud->health_bar.health <= 0)
 		dead_anim(data->data_hud);
 }
@@ -50,7 +50,7 @@ void	coolobj_norm(t_object *obj, t_input *data)
 		add_item(data, 3);
 		obj->exist = 0;
 	}
-	else 
+	else
 		coll2(obj, data);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beduroul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 20:24:28 by beduroul          #+#    #+#             */
-/*   Updated: 2020/03/02 20:24:31 by beduroul         ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 19:05:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ int				check_error(t_line *list)
 			obj_error(tmp->next, &error);
 		tmp = tmp->next;
 	}
-	printf("                    %d\n\n\n", error);
 	if (error > 0)
 	{
 		ft_putchar('\n');

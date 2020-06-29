@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_event.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:26:11 by calin             #+#    #+#             */
-/*   Updated: 2020/06/26 15:09:01 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 19:01:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,21 @@ void	shoot_fire(t_input *input)
 	t_object	*obj;
 	t_poly		*tmp;
 	int			r;
-	int			i;
 
 	obj = input->obj;
 	r = 720800;
 	while (obj)
 	{
 		tmp = obj->poly;
-		i = 0;
-		while (tmp)
+		if (obj->type == ENEMI)
 		{
-			if (((getcollishot(input, tmp, &coll, r)) > -1))
+			while (tmp)
 			{
-				if (damage_mob(obj))
-					return ;
+				if (((getcollishot(input, tmp, &coll, r)) == 1))
+					if (damage_mob(obj))
+						return ;
+				tmp = tmp->next;
 			}
-			i++;
-			tmp = tmp->next;
 		}
 		obj = obj->next;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:33:24 by user42            #+#    #+#             */
-/*   Updated: 2020/06/28 12:58:43 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 19:04:50 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int		key_press(int keycode, void *param)
 	t_input *data;
 
 	data = (t_input *)param;
-	printf("keypress %d\n", keycode);
 	data->data_hud->keys[keycode] = 1;
 	if (keycode == KEY_ESCAPE)
 		close_game(data->data_hud);

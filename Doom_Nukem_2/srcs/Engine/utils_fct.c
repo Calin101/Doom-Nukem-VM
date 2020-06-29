@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 16:13:17 by user42            #+#    #+#             */
-/*   Updated: 2020/06/29 15:21:41 by user42           ###   ########.fr       */
+/*   Updated: 2020/06/29 18:59:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,16 @@ t_ray	*tab_ray(int nbrpix, t_input *data)
 	return (new);
 }
 
-void	initialize_vec_poly(t_poly *poly)
+void	initialize_vec_poly(t_poly *poly, int xmax, int ymax)
 {
+	poly->ab = get2dvect((t_2d){.x = poly->cord[0].x * xmax, .y =
+	poly->cord[0].y * ymax}, (t_2d){.x = poly->cord[1].x * xmax,
+	.y = poly->cord[1].y * ymax});
+	poly->ac = get2dvect((t_2d){.x = poly->cord[1].x * xmax, .y =
+	poly->cord[1].y * ymax}, (t_2d){.x = poly->cord[2].x * xmax,
+	.y = poly->cord[2].y * ymax});
+	poly->a2d.x = poly->cord[0].x * xmax;
+	poly->a2d.y = poly->cord[0].y * ymax;
 	poly->vab = getvect(poly->dot[0], poly->dot[1]);
 	poly->vbc = getvect(poly->dot[1], poly->dot[2]);
 	poly->vac = getvect(poly->dot[0], poly->dot[2]);
@@ -65,17 +73,8 @@ int		cp_dots(t_poly *poly, int isobj)
 		}
 		else
 			poly->check_tex = 1;
-		
 		i = -1;
-		poly->ab = get2dvect((t_2d){.x = poly->cord[0].x * xmax, .y =
-		poly->cord[0].y * ymax}, (t_2d){.x = poly->cord[1].x * xmax,
-		.y = poly->cord[1].y * ymax});
-		poly->ac = get2dvect((t_2d){.x = poly->cord[1].x * xmax, .y =
-		poly->cord[1].y * ymax}, (t_2d){.x = poly->cord[2].x * xmax,
-		.y = poly->cord[2].y * ymax});
-		poly->a2d.x = poly->cord[0].x * xmax;
-		poly->a2d.y = poly->cord[0].y * ymax;
-		initialize_vec_poly(poly);
+		initialize_vec_poly(poly, xmax, ymax);
 		while (++i < 4)
 			poly->rotx[i] = poly->dot[i];
 		poly = poly->next;
@@ -90,7 +89,7 @@ void	cp_dotsobj(t_object *obj)
 		cp_dots(obj->poly, 1);
 		obj->posrx = obj->pos;
 		obj->exist = 1;
-		obj->hp = 100;
+		obj->hp = 50;
 		get_plans(obj->poly);
 		obj = obj->next;
 	}

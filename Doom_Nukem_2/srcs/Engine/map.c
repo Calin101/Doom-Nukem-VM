@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:42:01 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/29 13:59:31 by user42           ###   ########.fr       */
+/*   Updated: 2020/06/29 18:52:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	rev_moove(t_input *data, int way)
 	if (way == KEY_LEFT)
 		mapmoveallp(data, (t_fdot){.x = 0, .y = -8 * data->speed, .z = 0});
 	if (way == 1)
-		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = -2});
+		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = -5});
 	if (way == KEY_SPACEBAR)
 		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = 8});
 }
@@ -32,22 +32,21 @@ void	moove(t_input *data, int way)
 {
 	if (way == KEY_UP)
 		mapmoveallp(data, (t_fdot){.x = -8 * data->speed,
-		.y = 0, .z = -2});
+		.y = 0, .z = -1});
 	if (way == KEY_DOWN)
-		mapmoveallp(data, (t_fdot){.x = 8 * data->speed ,
-		.y = 0, .z = -2});
+		mapmoveallp(data, (t_fdot){.x = 8 * data->speed,
+		.y = 0, .z = -1});
 	if (way == KEY_RIGHT)
-		mapmoveallp(data, (t_fdot){.x = 0, .y = -8 * data->speed, .z = -2});
+		mapmoveallp(data, (t_fdot){.x = 0, .y = -8 * data->speed, .z = -1});
 	if (way == KEY_LEFT)
-		mapmoveallp(data, (t_fdot){.x = 0, .y = 8 * data->speed, .z = -2});
+		mapmoveallp(data, (t_fdot){.x = 0, .y = 8 * data->speed, .z = -1});
 	if (way == 1)
-		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = 2});
+		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = 5});
 	if (way == KEY_SPACEBAR)
 		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = -8});
 	if (check_colli(data->map))
 		rev_moove(data, way);
 	chckdoorcolli(way, data->obj, data);
-	
 }
 
 void	mapmoveallp(t_input *data, t_fdot way)

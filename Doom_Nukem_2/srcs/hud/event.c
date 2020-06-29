@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:26:48 by calin             #+#    #+#             */
-/*   Updated: 2020/06/29 15:54:07 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 19:01:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		mouse_moove(int x, int y, void *param)
 	int		dy;
 
 	data = (t_input *)param;
-	if (!data->data_hud->menu_state && !data->data_hud->dead_state 
+	if (!data->data_hud->menu_state && !data->data_hud->dead_state
 	&& !data->data_hud->win_state)
 	{
 		dx = WIN_SIZE_W / 2 - x;

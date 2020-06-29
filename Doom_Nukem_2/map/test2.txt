@@ -101,9 +101,9 @@ Polygon
 
 Object
 {
-    pos = x:125, y:-25, z:140
-    rot = x:90, y:0, z:0
-	scale = 3.2
+    pos = x:125, y:-75, z:140
+    rot = x:90, y:0, z:270
+	scale = 3
     file = chest.obj
 	type = chest
 }
@@ -230,7 +230,24 @@ Polygon
     texture = m3.xpm
 }
 
+// PASSAGE
 
+
+Polygon            //Sol
+{
+    dot = x:-250, y:-50, z:100, X:0, Y:0
+    dot = x:-250, y:0, z:100, X:0, Y:1
+    dot = x:0, y:-50, z:100, X:1, Y:0
+    texture = m3.xpm
+}
+
+Polygon
+{
+    dot = x:0, y:0, z:100, X:1, Y:1
+    dot = x:-250, y:0, z:100, X:0, Y:1
+    dot = x:0, y:-50, z:100, X:1, Y:0
+    texture = m3.xpm
+}
 
 Polygon					// Mur rampe
 {
@@ -478,9 +495,42 @@ Polygon					// Mur après rampe droite
 	texture = grillage.xpm
 }
 
+Object
+{
+    pos = x:-500, y:-100, z:200
+    rot = x:90, y:0, z:135
+	scale = 1
+    file = creeper.obj
+	type = enemi
+}
 
 
+Object
+{
+    pos = x:-500, y:-100, z:110
+    rot = x:0, y:0, z:0
+	scale = 1
+    file = pot.obj
+	type = potion
+}
 
+Object
+{
+    pos = x:100, y:0, z:-90
+    rot = x:0, y:0, z:0
+	scale = 1
+    file = ammo.obj
+	type = mun
+}
+
+Object
+{
+    pos = x:-500, y:100, z:110
+    rot = x:0, y:0, z:0
+	scale = 1
+    file = armor1.obj
+	type = armor
+}
 
 
 Polygon					// Mur  après rampe droite 2
@@ -615,6 +665,7 @@ Polygon
     texture = sole3.xpm
 }
 
+
 Polygon            //Sol apr-s rampe vers porte 2
 {
     dot = x:500, y:200, z:-100, X:0, Y:0
@@ -646,6 +697,34 @@ Polygon
     dot = x:0, y:350, z:-100, X:1, Y:0
     texture = sole3.xpm
 }
+
+Object
+{
+    pos = x:1000, y:125, z:-60
+    rot = x:90, y:0, z:315
+	scale = 2
+    file = creeper.obj
+	type = enemi
+}
+
+
+
+Polygon            //Sol vers fin
+{
+    dot = x:500, y:100, z:-100, X:1, Y:1
+    dot = x:500, y:150, z:-100, X:1, Y:0
+    dot = x:1000, y:100, z:-100, X:0, Y:1
+    texture = sole3.xpm
+}
+
+Polygon
+{
+    dot = x:1000, y:100, z:-100, X:0, Y:1
+    dot = x:1000, y:150, z:-100, X:0, Y:0
+    dot = x:500, y:150, z:-100, X:1, Y:0
+    texture = sole3.xpm
+}
+
 
 Polygon            // Mur salle porte
 {
@@ -713,8 +792,8 @@ Polygon
 
 Object
 {
-    pos = x:300, y:100, z:0
-    rot = x:180, y:0, z:0
+    pos = x:1000, y:120, z:-40
+    rot = x:180, y:0, z:180
 	scale = 3.2
     file = end.obj
 	type = end

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 18:08:24 by user42            #+#    #+#             */
-/*   Updated: 2020/06/29 15:22:00 by user42           ###   ########.fr       */
+/*   Updated: 2020/06/29 18:54:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,10 @@ int		projxy(t_poly *map, t_input *data)
 
 int		proj_2d(t_poly *map, t_input *data)
 {
-	int				i;
 	int				ret;
 
-	i = -1;
-	int j = -1;
 	while (map)
 	{
-		j++;
 		separate_points(map);
 		ret = projxy(map, data);
 		if (ret)

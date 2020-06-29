@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:17:42 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/29 17:14:33 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 19:04:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	init_var2(t_data *data)
 	.slot_three = 0, .slot_four = 0};
 	data->health_bar = (t_life){.x_min = 1400, .x_max = 1556, .y_min = 813,
 	.y_max = 831, .health = 20, .shield = 0};
-	data->current_ammo = 30;
-	data->total_ammo = 256;
+	data->current_ammo = 10;
+	data->total_ammo = 0;
 	data->healanim.index_heal_anim = -1;
 	data->shieldanim.index_shield_anim = -1;
 	data->weaponanim.index_wpn_anim = -1;
@@ -112,8 +112,6 @@ int		main(int c, char **v)
 		free_addr(&data, &input);
 		return (0);
 	}
-
-
 	gettimeofday(&input.timer.save_time, NULL);
 	cp_dots(data.map, 0);
 	cp_dotsobj(data.obj);
