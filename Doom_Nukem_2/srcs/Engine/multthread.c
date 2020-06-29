@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   multthread.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 17:58:08 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/26 18:29:51 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 14:53:40 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ void	redefine_in_thread(t_input *data, t_poly *poly, int i, int dy)
 void	thread_start(t_input *data, t_poly *poly)
 {
 	int i;
+	int j = -1;
 	int dx;
 	int dy;
 
 	while (poly)
 	{
+		j++;
 		if (poly->isvisible)
 		{
 			i = -1;
@@ -47,6 +49,7 @@ void	thread_start(t_input *data, t_poly *poly)
 			while (++i < NB_THREAD)
 				pthread_join(data->thread_tab[i].thread, NULL);
 		}
+		//printf("j = %d box = %d %d %d %d\n", j, poly->box.amin.x, poly->box.amin.y, poly->box.amax.x, poly->box.amax.y);
 		poly = poly->next;
 	}
 }

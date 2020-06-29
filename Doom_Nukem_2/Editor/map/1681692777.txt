@@ -1,0 +1,99 @@
+Skybox
+	texture = skybox.xpm
+
+Polygon
+{
+	dot = x:0, y:0, z:0, X:0, Y:0
+	dot = x:9600, y:0, z:0, X:1, Y:0
+	dot = x:0, y:8400, z:0, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:9600, y:8400, z:0, X:0, Y:0
+	dot = x:9600, y:0, z:0, X:1, Y:0
+	dot = x:0, y:8400, z:0, X:0, Y:1
+	texture = t3.xpm
+}
+
+Polygon
+{
+	dot = x:6000, y:1800, z:0, X:1, Y:1
+	dot = x:6000, y:1800, z:0, X:1, Y:0
+	dot = x:6200, y:1800, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:6200, y:1800, z:0, X:0, Y:0
+	dot = x:6000, y:1800, z:0, X:1, Y:0
+	dot = x:6200, y:1800, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:6200, y:2400, z:0, X:1, Y:1
+	dot = x:6200, y:2400, z:0, X:1, Y:0
+	dot = x:6400, y:2400, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:6400, y:2400, z:0, X:0, Y:0
+	dot = x:6200, y:2400, z:0, X:1, Y:0
+	dot = x:6400, y:2400, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:5800, y:2600, z:0, X:1, Y:1
+	dot = x:5800, y:2600, z:0, X:1, Y:0
+	dot = x:6000, y:2600, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:6000, y:2600, z:0, X:0, Y:0
+	dot = x:5800, y:2600, z:0, X:1, Y:0
+	dot = x:6000, y:2600, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:5800, y:3000, z:0, X:1, Y:1
+	dot = x:5800, y:3000, z:200, X:1, Y:0
+	dot = x:6000, y:3000, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:6000, y:3000, z:200, X:0, Y:0
+	dot = x:5800, y:3000, z:200, X:1, Y:0
+	dot = x:6000, y:3000, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:8600, y:3000, z:0, X:1, Y:1
+	dot = x:8600, y:3000, z:200, X:1, Y:0
+	dot = x:8800, y:3000, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+
+Polygon
+{
+	dot = x:8800, y:3000, z:200, X:0, Y:0
+	dot = x:8600, y:3000, z:200, X:1, Y:0
+	dot = x:8800, y:3000, z:0, X:0, Y:1
+	texture = m3.xpm
+}
+

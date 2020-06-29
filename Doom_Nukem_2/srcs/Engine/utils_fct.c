@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   utils_fct.c                                      .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/06/26 16:13:17 by user42       #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 21:00:04 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_fct.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/26 16:13:17 by user42            #+#    #+#             */
+/*   Updated: 2020/06/29 15:21:41 by user42           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "doom.h"
 
 t_ray	*tab_ray(int nbrpix, t_input *data)
@@ -63,6 +63,9 @@ int		cp_dots(t_poly *poly, int isobj)
 			while (++i < 4)
 				poly->cord[i].y = 1 - poly->cord[i].y;
 		}
+		else
+			poly->check_tex = 1;
+		
 		i = -1;
 		poly->ab = get2dvect((t_2d){.x = poly->cord[0].x * xmax, .y =
 		poly->cord[0].y * ymax}, (t_2d){.x = poly->cord[1].x * xmax,

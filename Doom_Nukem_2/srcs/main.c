@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   main.c                                           .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/11/05 14:17:42 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 22:32:08 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/05 14:17:42 by mwaterso          #+#    #+#             */
+/*   Updated: 2020/06/29 14:25:22 by user42           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "doom.h"
 
 int		init_var3(t_input *data, char *file)
@@ -112,6 +112,8 @@ int		main(int c, char **v)
 		free_addr(&data, &input);
 		return (0);
 	}
+
+
 	gettimeofday(&input.timer.save_time, NULL);
 	cp_dots(data.map, 0);
 	cp_dotsobj(data.obj);
