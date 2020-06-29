@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_obj.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 20:25:41 by beduroul          #+#    #+#             */
-/*   Updated: 2020/06/26 14:40:26 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 13:18:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void		sort_type(char *line, t_object *new)
 		new->type = SCEN;
 	else if (ft_strcmp(type, "end") == 0)
 		new->type = END;
+	else if (ft_strcmp(type, "door") == 0)
+		new->type = DOOR;
 	free(type);
 }
 

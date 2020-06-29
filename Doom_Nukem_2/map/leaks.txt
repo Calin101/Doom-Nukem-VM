@@ -1,21 +1,83 @@
 Skybox
 	texture = skybox.xpm
 
-Polygon				//Mur Fond
+Polygon				//gauche
 {
-   	dot = x:0, y:-100, z:100, X:0, Y:0
-    dot = x:0, y:50, z:100, X:1, Y:0
-    dot = x:0, y:-100, z:-100, X:0, Y:1
+   	dot = x:255, y:-100, z:100, X:0, Y:0
+    dot = x:255, y:125, z:100, X:1, Y:0
+    dot = x:255, y:-100, z:-100, X:0, Y:1
+    texture = t3.xpm
+}
+
+Polygon				//gauche porte
+{
+   	dot = x:255, y:-100, z:-100, X:0, Y:0
+    dot = x:255, y:125, z:100, X:1, Y:0
+    dot = x:255, y:125, z:-100, X:0, Y:1
     texture = t3.xpm
 }
 
 
-Object
+
+Polygon				//droite porte
 {
-    pos = x:0, y:0, z:5
-    rot = x:0, y:0, z:0
-	scale = 3
-    file = ammo.obj
-	type = chest
+   	dot = x:255, y:235, z:100, X:0, Y:0
+    dot = x:255, y:485, z:100, X:1, Y:0
+    dot = x:255, y:235, z:-100, X:0, Y:1
+    texture = t3.xpm
 }
 
+Polygon				//droite porte
+{
+   	dot = x:255, y:235, z:-100, X:0, Y:0
+    dot = x:255, y:485, z:100, X:1, Y:0
+    dot = x:255, y:485, z:-100, X:0, Y:1
+    texture = t3.xpm
+}
+
+Polygon				//porte dessus
+{
+   	dot = x:255, y:125, z:100, X:0, Y:0
+    dot = x:255, y:125, z:65, X:1, Y:0
+    dot = x:255, y:235, z:100, X:0, Y:1
+    texture = t3.xpm
+}
+
+Polygon				//porte dessus
+{
+   	dot = x:255, y:235, z:65, X:0, Y:0
+    dot = x:255, y:125, z:65, X:1, Y:0
+    dot = x:255, y:235, z:100, X:0, Y:1
+    texture = t3.xpm
+}
+
+Object
+{
+    pos = x:200, y:100, z:5
+    rot = x:90, y:0, z:90
+	scale = 10
+    file = door.obj
+	type = door
+}
+
+
+
+
+//Object
+{
+    pos = x:1000, y:0, z:5
+    rot = x:0, y:0, z:0
+	scale = 3
+    file = pot.obj
+	type = armor
+}
+
+
+//Object
+{
+    pos = x:500, y:100, z:5
+    rot = x:0, y:0, z:0
+	scale = 3
+    file = chest.obj
+	type = chest
+}

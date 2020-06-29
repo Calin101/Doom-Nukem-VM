@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:42:01 by mwaterso          #+#    #+#             */
-/*   Updated: 2020/06/28 13:06:34 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/06/29 13:31:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	moove(t_input *data, int way)
 		mapmoveallp(data, (t_fdot){.x = 0, .y = 0, .z = -8});
 	if (check_colli(data->map))
 		rev_moove(data, way);
+	chckdoorcolli(way, data->obj, data);
+	
 }
 
 void	mapmoveallp(t_input *data, t_fdot way)

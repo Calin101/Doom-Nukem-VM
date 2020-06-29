@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   doom.h                                           .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: user42 <user42@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/05/15 15:38:23 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2020/06/28 22:33:21 by user42      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   doom.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/15 15:38:23 by mwaterso          #+#    #+#             */
+/*   Updated: 2020/06/29 13:32:40 by user42           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
+
 #ifndef DOOM_H
 # define DOOM_H
 
@@ -49,7 +49,7 @@
 # define MOB_MOVE_SPEED	2
 
 enum {NUM, TEX, CORD, BRACKET, O_BRACKET, TEX_E, TEX_X, BLOCK, D_OBJ};
-enum {ENEMI, POTION, ARMOR, MUN, SCEN, CHEST, KEY, END};
+enum {ENEMI, POTION, ARMOR, MUN, SCEN, CHEST, KEY, END, DOOR};
 
 typedef struct			s_2d
 {
@@ -399,6 +399,8 @@ typedef struct			s_file_obj
 	int					tex;
 }						t_file_obj;
 
+void					rev_moove(t_input *data, int way);
+void					chckdoorcolli(int way, t_object *obj, t_input *data);
 int 					clgame(void *param);
 void					coll2(t_object *obj, t_input *data);
 void					win_anim(t_data *data);
